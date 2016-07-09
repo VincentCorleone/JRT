@@ -215,6 +215,9 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
             if (body.length == 2 && body[0] == 0 && body[1] == 0) {
                 //Info: 生产者停止生成数据, 并不意味着马上结束
                 System.out.println("Got the end signal");
+                PaymentMessage paymentMessage = new PaymentMessage();
+                paymentMessage.setCreateTime(0);
+                PaymentMessages.add(paymentMessage);
                 continue;
             }
 

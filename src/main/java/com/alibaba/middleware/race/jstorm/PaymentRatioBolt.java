@@ -38,14 +38,16 @@ public class PaymentRatioBolt implements IRichBolt {
         MetaTuple<PaymentMessage> metaTuple = (MetaTuple<PaymentMessage>)tuple.getValue(0);
         try {
             for(PaymentMessage paymentMessage : metaTuple.msgList){
+                if(paymentMessage.getCreateTime()==0){
+                    hashMapAllToTair();
+                    break;
+                }
                 int minutestamp =((int)(paymentMessage.getCreateTime()/60000))*60;
                 setRange(minutestamp);
                 String minutestampStr = String.valueOf(minutestamp);
                 String resultString = putInHashMap(minutestampStr,paymentMessage.getPayPlatform(),paymentMessage.getPayAmount());
                 LOG.info(resultString);
             }
-
-            LOG.info("I am Jstorm , hello to Messages:" + metaTuple);
 
         } catch (Exception e) {
             collector.fail(tuple);
@@ -130,6 +132,16 @@ public class PaymentRatioBolt implements IRichBolt {
                 hashmap.remove(tmpkey);
             }
             minMinutestamp = maxMinutestamp - offset;
+        }
+    }
+
+    private void hashMapAllToTair(){
+        for (int i=minMinutestamp;i <= maxMinutestamp;i+=60){
+            String tmpkey = String.valueOf(i);
+            PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
+            double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
+            tairOperator.write(tmpkey,ratio);
+            hashmap.remove(tmpkey);
         }
     }
 }
