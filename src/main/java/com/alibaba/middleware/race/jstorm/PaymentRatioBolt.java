@@ -6,47 +6,43 @@ import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Tuple;
 
+import com.alibaba.middleware.race.Tair.TairOperatorImpl;
+import com.alibaba.middleware.race.model.PaymentAmountBin;
 import com.alibaba.middleware.race.model.PaymentMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.List;
 
 public class PaymentRatioBolt implements IRichBolt {
 
 
     protected OutputCollector collector;
     private static Logger LOG = LoggerFactory.getLogger(PaymentRatioBolt.class);
-    HashMap<String,List<Double>> hashmap = new HashMap<String,List<Double>>();
+
+    HashMap<String,PaymentAmountBin> hashmap = new HashMap<String,PaymentAmountBin>();
+    protected int minMinutestamp = 0;
+    protected int maxMinutestamp = 0;
+
+    //必须是60的倍数
+    protected final int rangeSizeOnInputTair = 3600;
+    protected final int offset = 600;
+
+    private TairOperatorImpl tairOperator = new TairOperatorImpl();
+
+
 
     @Override
     public void execute(Tuple tuple) {
         MetaTuple<PaymentMessage> metaTuple = (MetaTuple<PaymentMessage>)tuple.getValue(0);
         try {
             for(PaymentMessage paymentMessage : metaTuple.msgList){
-                int Id =(int)paymentMessage.getCreateTime()/1000;
-                int minutestamp = Id/60*60;
-                String key = String.valueOf(minutestamp);
-                Double value = null;
-                Double PcValue=0.0;
-                Double WirelessValue=0.0;
-                short source = paymentMessage.getPaySource();
-                if(source==0) //PC
-                {
-                     PcValue = paymentMessage.getPayAmount();
-                }
-                if(source==1) //Wireless
-                {
-                    WirelessValue = paymentMessage.getPayAmount();
-                }
-
-                if(hashmap.get(key)==null)
-                {
-                    hashmap.set(key,paymentMessage.getPayAmount());
-                }
-                hashmap.set(key,)
+                int minutestamp =((int)(paymentMessage.getCreateTime()/60000))*60;
+                setRange(minutestamp);
+                String minutestampStr = String.valueOf(minutestamp);
+                String resultString = putInHashMap(minutestampStr,paymentMessage.getPayPlatform(),paymentMessage.getPayAmount());
+                LOG.info(resultString);
             }
 
             LOG.info("I am Jstorm , hello to Messages:" + metaTuple);
@@ -81,5 +77,59 @@ public class PaymentRatioBolt implements IRichBolt {
     public Map<String, Object> getComponentConfiguration() {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    private String putInHashMap(String key,short payPlatform,double value){
+        PaymentAmountBin paymentAmountBin = hashmap.get(key);
+        if(paymentAmountBin == null)
+        {
+            paymentAmountBin = new PaymentAmountBin();
+            if(payPlatform == 0)
+            {
+                //PC
+                paymentAmountBin.pcAmount = value;
+                paymentAmountBin.wirelessAmount = 0.0;
+            }else{
+                //无线
+                paymentAmountBin.pcAmount = 0.0;
+                paymentAmountBin.wirelessAmount = value;
+            }
+            hashmap.put(key, paymentAmountBin);
+        }else{
+            if(payPlatform == 0)
+            {
+                //PC
+                paymentAmountBin.pcAmount += value;
+            }else{
+                //无线
+                paymentAmountBin.wirelessAmount += value;
+            }
+            hashmap.put(key, paymentAmountBin);
+        }
+        return  "{" + key + "," + Double.toString(paymentAmountBin.pcAmount) + "," + Double.toString(paymentAmountBin.wirelessAmount) + "}";
+    }
+
+    private void setRange(int minutestamp){
+        if( minMinutestamp == 0 ){
+            minMinutestamp = minutestamp;
+            maxMinutestamp = minutestamp;
+        }else{
+            if(minutestamp < minMinutestamp){
+                minMinutestamp = minutestamp;
+            }else if(minutestamp > maxMinutestamp){
+                maxMinutestamp = minutestamp;
+            }
+        }
+
+        if ((maxMinutestamp - minMinutestamp)>rangeSizeOnInputTair){
+            for (int i=minMinutestamp;i < (maxMinutestamp-offset);i+=60){
+                String tmpkey = String.valueOf(i);
+                PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
+                double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
+                tairOperator.write(tmpkey,ratio);
+                hashmap.remove(tmpkey);
+            }
+            minMinutestamp = maxMinutestamp - offset;
+        }
     }
 }
