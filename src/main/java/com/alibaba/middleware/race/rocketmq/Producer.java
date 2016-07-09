@@ -26,15 +26,14 @@ public class Producer {
     /**
      * 这是一个模拟堆积消息的程序，生成的消息模型和我们比赛的消息模型是一样的，
      * 所以选手可以利用这个程序生成数据，做线下的测试。
-     * @param args
      * @throws MQClientException
      * @throws InterruptedException
      */
-    public static void main(String[] args) throws MQClientException, InterruptedException {
+    public static void beiginProduce() throws MQClientException, InterruptedException {
         DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
 
         //在本地搭建好broker后,记得指定nameServer的地址
-        //producer.setNamesrvAddr("127.0.0.1:9876");
+        producer.setNamesrvAddr("116.56.129.194:9876");
 
         producer.start();
 

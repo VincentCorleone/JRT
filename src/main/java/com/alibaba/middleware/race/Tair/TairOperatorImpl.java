@@ -2,6 +2,13 @@ package com.alibaba.middleware.race.Tair;
 
 import com.alibaba.middleware.race.RaceConfig;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.taobao.tair.ResultCode;
+import com.taobao.tair.impl.DefaultTairManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -10,14 +17,37 @@ import java.io.Serializable;
  */
 public class TairOperatorImpl {
 
+
+
+    private static Logger LOG = LoggerFactory.getLogger(TairOperatorImpl.class);
+    private DefaultTairManager tairManager = new DefaultTairManager();
+
     public TairOperatorImpl(String masterConfigServer,
                             String slaveConfigServer,
                             String groupName,
                             int namespace) {
+        List<String> confServer = new ArrayList<String>();
+        confServer.add(masterConfigServer);
+        confServer.add(slaveConfigServer);
+        tairManager.setConfigServerList(confServer);
+        tairManager.setGroupName(groupName);
+        tairManager.init();
     }
 
-    public boolean write(Serializable key, Serializable value) {
+    public boolean write(String key, Double value) {
+        int namespace = 35431;
+
+        ResultCode statuscode = tairManager.put(namespace,key,value);  //put is a function of Tair.
+
+        if(statuscode.isSuccess())
+        {
+            LOG.info("[*] " + key + "Has been Stored Successfully.");
+            return true;
+        }
+
+        LOG.info("[*] " + key + "Has not been Stored Successfully.");
         return false;
+
     }
 
     public Object get(Serializable key) {
