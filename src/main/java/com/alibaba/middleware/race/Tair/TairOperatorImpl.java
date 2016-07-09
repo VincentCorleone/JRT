@@ -27,7 +27,10 @@ public class TairOperatorImpl {
     public TairOperatorImpl() {
         List<String> confServer = new ArrayList<String>();
         confServer.add(RaceConfig.TairConfigServer);
-        confServer.add(RaceConfig.TairSlaveConfigServer);
+        if (RaceConfig.TairSlaveConfigServer != ""){
+            confServer.add(RaceConfig.TairSlaveConfigServer);
+        }
+
         tairManager.setConfigServerList(confServer);
         tairManager.setGroupName(RaceConfig.TairGroup);
         tairManager.init();
