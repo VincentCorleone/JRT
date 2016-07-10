@@ -48,6 +48,14 @@ public class RaceTopology {
             conf.setNumWorkers(4);
         }
 
+        conf.setDebug(true);
+        if(RaceConfig.LocalMode){
+            conf.setNumWorkers(1);
+        }else{
+            conf.setNumWorkers(4);
+        }
+
+
         TopologyBuilder builder = setupBuilder();
 
         submitTopology(builder);
@@ -55,6 +63,7 @@ public class RaceTopology {
 
     private static TopologyBuilder setupBuilder() throws Exception {
         TopologyBuilder builder = new TopologyBuilder();
+
 
         if(RaceConfig.LocalMode){
             builder.setSpout(RaceConfig.RaceSpout, new RaceSpout(), 1);
@@ -67,6 +76,7 @@ public class RaceTopology {
             builder.setBolt(RaceConfig.TaobaoBolt,new TaobaoBolt(),7).fieldsGrouping(RaceConfig.MqTaobaoTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
             builder.setBolt(RaceConfig.TmallBolt,new TmallBolt(),8).fieldsGrouping(RaceConfig.MqTmallTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
         }
+
         return builder;
     }
 
