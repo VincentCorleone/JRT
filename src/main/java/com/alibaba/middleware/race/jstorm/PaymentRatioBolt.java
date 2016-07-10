@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.Iterator;
 
 public class PaymentRatioBolt implements IRichBolt {
 
@@ -31,7 +31,7 @@ public class PaymentRatioBolt implements IRichBolt {
     protected final int rangeSizeOnInputTair = 3600;
     protected final int offset = 600;
 
-    public TairOperatorImpl tairOperator = new TairOperatorImpl();
+
 
 
 
@@ -67,7 +67,7 @@ public class PaymentRatioBolt implements IRichBolt {
     @Override
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         this.collector = collector;
-
+        new TairOperatorImpl();
     }
 
     @Override
@@ -125,11 +125,19 @@ public class PaymentRatioBolt implements IRichBolt {
         }
 
         if ((maxMinutestamp - minMinutestamp)>rangeSizeOnInputTair){
+            PaymentAmountBin paymentAmountBinSum = new PaymentAmountBin();
+            paymentAmountBinSum.pcAmount = 0.0;
+            paymentAmountBinSum.wirelessAmount = 0.0;
             for (int i=minMinutestamp;i < (maxMinutestamp-offset);i+=60){
+
                 String tmpkey = String.valueOf(i);
-                PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
-                double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
-                TairOperatorImpl.tairManager.put(0,tmpkey,new Double(ratio));
+                PaymentAmountBin paymentAmountBinThisMinute= hashmap.get(tmpkey);
+                paymentAmountBinSum.pcAmount += paymentAmountBinThisMinute.pcAmount;
+                paymentAmountBinSum.wirelessAmount += paymentAmountBinThisMinute.wirelessAmount;
+
+                double ratio = paymentAmountBinSum.pcAmount/paymentAmountBinSum.wirelessAmount;
+                String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
+                TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace,finalkey,new Double(ratio));
                 hashmap.remove(tmpkey);
             }
             minMinutestamp = maxMinutestamp - offset;
@@ -137,12 +145,16 @@ public class PaymentRatioBolt implements IRichBolt {
     }
 
     private void hashMapAllToTair(){
-        for (int i=minMinutestamp;i <= maxMinutestamp;i+=60){
-            String tmpkey = String.valueOf(i);
+        Iterator it = hashmap.keySet().iterator();
+        while(it.hasNext())
+        {
+            String tmpkey = (String)it.next();
             PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
             double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
-            TairOperatorImpl.tairManager.put(0,tmpkey,new Double(ratio));
-            hashmap.remove(tmpkey);
+            String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
+            TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace,finalkey,new Double(ratio));
+
         }
+        hashmap.clear();
     }
 }
