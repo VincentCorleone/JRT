@@ -23,7 +23,7 @@ public class PaymentRatioBolt implements IRichBolt {
     protected OutputCollector collector;
     private static Logger LOG = LoggerFactory.getLogger(PaymentRatioBolt.class);
 
-    HashMap<String,PaymentAmountBin> hashmap = new HashMap<String,PaymentAmountBin>();
+    HashMap<String, PaymentAmountBin> hashmap = new HashMap<String, PaymentAmountBin>();
     protected int minMinutestamp = 0;
     protected int maxMinutestamp = 0;
 
@@ -32,29 +32,25 @@ public class PaymentRatioBolt implements IRichBolt {
     protected final int offset = 600;
 
 
-
-
-
     @Override
     public void execute(Tuple tuple) {
 
-        if(tuple.getSourceStreamId().equals(RaceConfig.MqPayTopic)){
+        if (tuple.getSourceStreamId().equals(RaceConfig.MqPayTopic)) {
 
-            int minutestamp = (int)tuple.getValueByField(RaceConfig.Minutestamp);
-            double paymentAmount = (double)tuple.getValueByField(RaceConfig.PaymentAmount);
-            short platform = (short)tuple.getValueByField(RaceConfig.PaymentAmount);
+            int minutestamp = (int) tuple.getValueByField(RaceConfig.Minutestamp);
+            double paymentAmount = (double) tuple.getValueByField(RaceConfig.PaymentAmount);
+            short platform = (short) tuple.getValueByField(RaceConfig.PaymentAmount);
 
-            if (minutestamp ==0){
+            if (minutestamp == 0) {
                 hashMapAllToTair();
-            }else{
+            } else {
                 setRange(minutestamp);
                 String minutestampStr = String.valueOf(minutestamp);
-                String resultString = putInHashMap(minutestampStr,platform,paymentAmount);
+                String resultString = putInHashMap(minutestampStr, platform, paymentAmount);
                 LOG.info(resultString);
             }
             collector.ack(tuple);
         }
-
 
 
     }
@@ -82,79 +78,74 @@ public class PaymentRatioBolt implements IRichBolt {
         return null;
     }
 
-    private String putInHashMap(String key,short payPlatform,double value){
+    private String putInHashMap(String key, short payPlatform, double value) {
         PaymentAmountBin paymentAmountBin = hashmap.get(key);
-        if(paymentAmountBin == null)
-        {
+        if (paymentAmountBin == null) {
             paymentAmountBin = new PaymentAmountBin();
-            if(payPlatform == 0)
-            {
+            if (payPlatform == 0) {
                 //PC
                 paymentAmountBin.pcAmount = value;
                 paymentAmountBin.wirelessAmount = 0.0;
-            }else{
+            } else {
                 //无线
                 paymentAmountBin.pcAmount = 0.0;
                 paymentAmountBin.wirelessAmount = value;
             }
             hashmap.put(key, paymentAmountBin);
-        }else{
-            if(payPlatform == 0)
-            {
+        } else {
+            if (payPlatform == 0) {
                 //PC
                 paymentAmountBin.pcAmount += value;
-            }else{
+            } else {
                 //无线
                 paymentAmountBin.wirelessAmount += value;
             }
             hashmap.put(key, paymentAmountBin);
         }
-        return  "{" + key + "," + Double.toString(paymentAmountBin.pcAmount) + "," + Double.toString(paymentAmountBin.wirelessAmount) + "}";
+        return "{" + key + "," + Double.toString(paymentAmountBin.pcAmount) + "," + Double.toString(paymentAmountBin.wirelessAmount) + "}";
     }
 
-    private void setRange(int minutestamp){
-        if( minMinutestamp == 0 ){
+    private void setRange(int minutestamp) {
+        if (minMinutestamp == 0) {
             minMinutestamp = minutestamp;
             maxMinutestamp = minutestamp;
-        }else{
-            if(minutestamp < minMinutestamp){
+        } else {
+            if (minutestamp < minMinutestamp) {
                 minMinutestamp = minutestamp;
-            }else if(minutestamp > maxMinutestamp){
+            } else if (minutestamp > maxMinutestamp) {
                 maxMinutestamp = minutestamp;
             }
         }
 
-        if ((maxMinutestamp - minMinutestamp)>rangeSizeOnInputTair){
+        if ((maxMinutestamp - minMinutestamp) > rangeSizeOnInputTair) {
             PaymentAmountBin paymentAmountBinSum = new PaymentAmountBin();
             paymentAmountBinSum.pcAmount = 0.0;
             paymentAmountBinSum.wirelessAmount = 0.0;
-            for (int i=minMinutestamp;i < (maxMinutestamp-offset);i+=60){
+            for (int i = minMinutestamp; i < (maxMinutestamp - offset); i += 60) {
 
                 String tmpkey = String.valueOf(i);
-                PaymentAmountBin paymentAmountBinThisMinute= hashmap.get(tmpkey);
+                PaymentAmountBin paymentAmountBinThisMinute = hashmap.get(tmpkey);
                 paymentAmountBinSum.pcAmount += paymentAmountBinThisMinute.pcAmount;
                 paymentAmountBinSum.wirelessAmount += paymentAmountBinThisMinute.wirelessAmount;
 
-                double ratio = paymentAmountBinSum.pcAmount/paymentAmountBinSum.wirelessAmount;
+                double ratio = paymentAmountBinSum.pcAmount / paymentAmountBinSum.wirelessAmount;
                 String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
-                TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace,finalkey,new Double(ratio));
-		System.out.println("[*] Write-into Tair.");
+                TairOperatorImpl.write(finalkey, new Double(ratio));
                 hashmap.remove(tmpkey);
             }
             minMinutestamp = maxMinutestamp - offset;
         }
     }
 
-    private void hashMapAllToTair(){
+    private void hashMapAllToTair() {
         Iterator it = hashmap.keySet().iterator();
-        while(it.hasNext())
-        {
-            String tmpkey = (String)it.next();
-            PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
-            double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
+        while (it.hasNext()) {
+            String tmpkey = (String) it.next();
+            PaymentAmountBin paymentAmountBin = hashmap.get(tmpkey);
+            double ratio = paymentAmountBin.pcAmount / paymentAmountBin.wirelessAmount;
             String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
-            TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace,finalkey,new Double(ratio));
-	    System.out.println("[*] Write-into Tair.");
+            TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace, finalkey, new Double(ratio));
+            System.out.println("[*] Write-into Tair.");
 
         }
         hashmap.clear();
