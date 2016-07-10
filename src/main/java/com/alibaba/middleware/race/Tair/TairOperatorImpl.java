@@ -35,7 +35,7 @@ public class TairOperatorImpl {
         tairManager.setGroupName(RaceConfig.TairGroup);
         tairManager.init();
     }
-
+    
     public boolean write(String key, Double value) {
         ResultCode statuscode = tairManager.put(namespace,key,value);  //put is a function of Tair.
         if(statuscode.isSuccess())
