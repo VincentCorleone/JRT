@@ -7,6 +7,7 @@ import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Tuple;
 
+import com.alibaba.middleware.race.RaceConfig;
 import com.alibaba.middleware.race.Tair.TairOperatorImpl;
 import com.alibaba.middleware.race.model.PaymentAmountBin;
 import com.alibaba.middleware.race.model.PaymentMessage;
@@ -37,27 +38,26 @@ public class PaymentRatioBolt implements IRichBolt {
 
     @Override
     public void execute(Tuple tuple) {
-        MetaTuple<PaymentMessage> metaTuple = (MetaTuple<PaymentMessage>)tuple.getValue(0);
-        try {
-            for(PaymentMessage paymentMessage : metaTuple.msgList){
-                if(paymentMessage.getCreateTime()==0){
-                    hashMapAllToTair();
-                    break;
-                }
-                int minutestamp =((int)(paymentMessage.getCreateTime()/60000))*60;
+
+        if(tuple.getSourceStreamId().equals(RaceConfig.MqPayTopic)){
+
+            int minutestamp = (int)tuple.getValueByField(RaceConfig.Minutestamp);
+            double paymentAmount = (double)tuple.getValueByField(RaceConfig.PaymentAmount);
+            short platform = (short)tuple.getValueByField(RaceConfig.PaymentAmount);
+
+            if (minutestamp ==0){
+                hashMapAllToTair();
+            }else{
                 setRange(minutestamp);
                 String minutestampStr = String.valueOf(minutestamp);
-                String resultString = putInHashMap(minutestampStr,paymentMessage.getPayPlatform(),paymentMessage.getPayAmount());
+                String resultString = putInHashMap(minutestampStr,platform,paymentAmount);
                 LOG.info(resultString);
             }
-
-        } catch (Exception e) {
-            collector.fail(tuple);
-            return ;
-            //throw new FailedException(e);
+            collector.ack(tuple);
         }
 
-        collector.ack(tuple);
+
+
     }
 
     @Override
