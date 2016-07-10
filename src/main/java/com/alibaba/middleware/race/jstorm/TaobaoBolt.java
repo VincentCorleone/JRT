@@ -62,7 +62,7 @@ public class TaobaoBolt implements IRichBolt {
     			}
     			else{
     				try{
-    				TaobaoBolt.hashmap.put(Createtime,value+PaymentAmount);
+    				TaobaoBolt.hashmap.put(Createtime,new Double(value+PaymentAmount));
     				}
     				catch(Exception e)
     				{

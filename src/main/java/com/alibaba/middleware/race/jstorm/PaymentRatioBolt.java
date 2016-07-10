@@ -138,6 +138,7 @@ public class PaymentRatioBolt implements IRichBolt {
                 double ratio = paymentAmountBinSum.pcAmount/paymentAmountBinSum.wirelessAmount;
                 String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
                 TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace,finalkey,new Double(ratio));
+		System.out.println("[*] Write-into Tair.");
                 hashmap.remove(tmpkey);
             }
             minMinutestamp = maxMinutestamp - offset;
@@ -153,6 +154,7 @@ public class PaymentRatioBolt implements IRichBolt {
             double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
             String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
             TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace,finalkey,new Double(ratio));
+	    System.out.println("[*] Write-into Tair.");
 
         }
         hashmap.clear();
