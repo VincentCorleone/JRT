@@ -55,8 +55,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
     protected transient DefaultMQPushConsumer consumer;
 
-    protected transient HashMap<Long, Short> Taobaohashmap = new HashMap<>();
-    protected transient HashMap<Long, Short> Tmallhashmap = new HashMap<>();
+    protected transient HashMap<Long, Short> Taobaohashmap = new HashMap<Long, Short>();
+    protected transient HashMap<Long, Short> Tmallhashmap = new HashMap<Long, Short>();
 
     long sendingCount;
     long startTime;
@@ -143,9 +143,13 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         if (paymentMessage == null) {
 	 System.out.println("[*] PaymentMessage = null");
             return;
+<<<<<<< HEAD
         }
         else{
 	
+=======
+        }else{
+>>>>>>> 2d20202ca9b5cc88327be74741cfd7f78d068ff5
         sendPaymentMessage(paymentMessage);
 	System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) +" , "+ String.valueOf(paymentMessage.getCreateTime()));
         }
@@ -155,6 +159,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         if (paymentMessage == null) {
             return;
         }
+<<<<<<< HEAD
 	Object T = null;
 	Object U = null;
 	try{
@@ -179,6 +184,16 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 		    sendTaobaoMsg(paymentMessage);
 		}
 	}
+=======
+        Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
+        if ( isTaobao != null && isTaobao == 1 ) {
+            sendTaobaoMsg(paymentMessage);
+        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) != null) {
+            sendTmallMsg(paymentMessage);
+        } else {
+
+        }
+>>>>>>> 2d20202ca9b5cc88327be74741cfd7f78d068ff5
         sendPaymentMsg(paymentMessage);
     }
 
@@ -289,7 +304,11 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
                 try {
                     sendingQueue.offer(temp);
+<<<<<<< HEAD
 		System.out.println("[*] Write in Queue.");
+=======
+                    LOG.info("Sending queue of paytopic successfully!");
+>>>>>>> 2d20202ca9b5cc88327be74741cfd7f78d068ff5
                 } catch (Exception e) {
                     System.out.println("offer failed");
                     e.printStackTrace();
@@ -308,6 +327,13 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
                     OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
 
+<<<<<<< HEAD
+=======
+                    try {
+                        Taobaohashmap.put(taobaoMessage.getOrderId(), (short) 1);
+                        LOG.info("Put into TaobaoHashmap successfully!");
+                    } catch (Exception e) {
+>>>>>>> 2d20202ca9b5cc88327be74741cfd7f78d068ff5
                     
                         Taobaohashmap.put(new Long(taobaoMessage.getOrderId()),new Short((short)1));
                     
@@ -322,10 +348,24 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 }
                 
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
+<<<<<<< HEAD
                     
                         Tmallhashmap.put(new Long(tmallMessage.getOrderId()), new Short((short)1));
                     
                
+=======
+                    try {
+                        Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
+                        LOG.info("Put into TmallHashmap successfully!");
+                    } catch (Exception e) {
+                        System.out.println("Write-in Hashmap failed.");
+                        e.printStackTrace();
+                    }
+                } catch (Exception e) {
+                    System.out.println("DeSerialize Failed!");
+                    e.printStackTrace();
+                }
+>>>>>>> 2d20202ca9b5cc88327be74741cfd7f78d068ff5
             }
         }
         return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
