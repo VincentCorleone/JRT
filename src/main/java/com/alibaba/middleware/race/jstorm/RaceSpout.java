@@ -59,8 +59,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
     protected transient DefaultMQPushConsumer consumer;
 
-    protected transient HashMap<Long, Short> Taobaohashmap = new HashMap<Long, Short>();
-    protected transient HashMap<Long, Short> Tmallhashmap = new HashMap<Long, Short>();
+    protected transient HashMap<Long, Short> Taobaohashmap;
+    protected transient HashMap<Long, Short> Tmallhashmap;
 
     long sendingCount;
     long startTime;
@@ -82,6 +82,10 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     @Override
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
         this.collector = collector;
+
+        this.Taobaohashmap =  new HashMap<Long, Short>();
+        this.Tmallhashmap =  new HashMap<Long, Short>();
+        
 
         this.id = context.getThisComponentId() + ":" + context.getThisTaskId();
 
