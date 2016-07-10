@@ -17,11 +17,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class PaymentRatioBolt implements IRichBolt {
+public class TaobaoBolt implements IRichBolt {
 
 
     protected OutputCollector collector;
-    private static Logger LOG = LoggerFactory.getLogger(PaymentRatioBolt.class);
+    private static Logger LOG = LoggerFactory.getLogger(TaobaoBolt.class);
 
     HashMap<String,PaymentAmountBin> hashmap = new HashMap<String,PaymentAmountBin>();
     protected int minMinutestamp = 0;

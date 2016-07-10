@@ -70,8 +70,8 @@ public class MetaConsumerFactory {
 //		consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
 
 		consumer.subscribe(RaceConfig.MqPayTopic, "*");
-//		consumer.subscribe(RaceConfig.MqTaobaoTradeTopic, "*");
-//		consumer.subscribe(RaceConfig.MqTmallTradeTopic, "*");
+		consumer.subscribe(RaceConfig.MqTaobaoTradeTopic, "*");
+		consumer.subscribe(RaceConfig.MqTmallTradeTopic, "*");
 
 		consumer.registerMessageListener(listener);
 		
