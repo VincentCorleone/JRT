@@ -41,6 +41,12 @@ public class RaceTopology {
         if(RaceConfig.LocalMode){
         new Producer().beiginProduce();
         }
+        conf.setDebug(true);
+        if(RaceConfig.LocalMode){
+            conf.setNumWorkers(1);
+        }else{
+            conf.setNumWorkers(4);
+        }
 
         TopologyBuilder builder = setupBuilder();
 
@@ -50,12 +56,17 @@ public class RaceTopology {
     private static TopologyBuilder setupBuilder() throws Exception {
         TopologyBuilder builder = new TopologyBuilder();
 
-        builder.setSpout(RaceConfig.RaceSpout, new RaceSpout(), 1);
-
-        builder.setBolt(RaceConfig.PaymentRatioBolt, new PaymentRatioBolt(), 1)
-                .fieldsGrouping(RaceConfig.MqPayTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
-        builder.setBolt(RaceConfig.TaobaoBolt,new TaobaoBolt(),1).fieldsGrouping(RaceConfig.MqTaobaoTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
-        builder.setBolt(RaceConfig.TmallBolt,new TmallBolt(),1).fieldsGrouping(RaceConfig.MqTmallTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+        if(RaceConfig.LocalMode){
+            builder.setSpout(RaceConfig.RaceSpout, new RaceSpout(), 1);
+            builder.setBolt(RaceConfig.PaymentRatioBolt, new PaymentRatioBolt(), 1).fieldsGrouping(RaceConfig.MqPayTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+            builder.setBolt(RaceConfig.TaobaoBolt,new TaobaoBolt(),1).fieldsGrouping(RaceConfig.MqTaobaoTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+            builder.setBolt(RaceConfig.TmallBolt,new TmallBolt(),1).fieldsGrouping(RaceConfig.MqTmallTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+        }else{
+            builder.setSpout(RaceConfig.RaceSpout, new RaceSpout(), 4);
+            builder.setBolt(RaceConfig.PaymentRatioBolt, new PaymentRatioBolt(), 1).fieldsGrouping(RaceConfig.MqPayTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+            builder.setBolt(RaceConfig.TaobaoBolt,new TaobaoBolt(),7).fieldsGrouping(RaceConfig.MqTaobaoTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+            builder.setBolt(RaceConfig.TmallBolt,new TmallBolt(),8).fieldsGrouping(RaceConfig.MqTmallTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+        }
         return builder;
     }
 
