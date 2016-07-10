@@ -325,19 +325,29 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 try {
                     OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
 
-
+		    if(taobaoMessage != null){
+		    System.out.println("[*] taobaoMessage: " + taobaoMessage.toString());
+		    
+		       
                     try {
+			
+			
                         Taobaohashmap.put(taobaoMessage.getOrderId(), (short) 1);
                         LOG.info("Put into TaobaoHashmap successfully!");
                     } catch (Exception e) {
                         LOG.info("Put into TaobaoHashmap failed!");
                         e.printStackTrace();
                     }
+
+		}
+		else{
+			System.out.println("[*] taobaoMessage is None.");
+		}
                 } catch (Exception e) {
                     System.out.println("DeSerialize Failed!");
                     e.printStackTrace();
                 }
-
+		
 
             } else if (topic.equals(RaceConfig.MqTmallTradeTopic)) {
                 //Tmall Msg.
@@ -348,6 +358,9 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 }
                 try {
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
+		       if(tmallMessage != null){
+	
+	               System.out.println("[*] TmallMessage: " + tmallMessage.toString());
                     try {
                         Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
                         LOG.info("Put into TmallHashmap successfully!");
@@ -355,6 +368,11 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                         System.out.println("Write-in Hashmap failed.");
                         e.printStackTrace();
                     }
+
+		}
+		else{
+			System.out.println("[*] tmallMessage is None.");
+		}
                 } catch (Exception e) {
                     System.out.println("DeSerialize Failed!");
                     e.printStackTrace();
