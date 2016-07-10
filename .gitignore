@@ -1,5 +1,6 @@
 target/mvn-eclipse-cache.properties
 target/
+bin/
 
 # eclipse
 .classpath
