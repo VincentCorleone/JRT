@@ -40,7 +40,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     private static Logger LOG = LoggerFactory.getLogger(RaceSpout.class);
 
 
-    private static int timestampToMinutestamp(long timestamp){
+    private static int timestampToMinutestamp(long timestamp) {
         return (int) (timestamp / 60000) * 60;
     }
 
@@ -138,20 +138,20 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
         SimplePaymentMessage paymentMessage = null;
 
-	try{
+        try {
             paymentMessage = sendingQueue.take();
-		 System.out.println("[*] Taking from Queue.");
-        }catch(Exception e){
-		System.out.println("Taking from queue Wrong!");
-	}
+            System.out.println("[*] Taking from Queue.");
+        } catch (Exception e) {
+            System.out.println("Taking from queue Wrong!");
+        }
         if (paymentMessage == null) {
-	 System.out.println("[*] PaymentMessage = null");
+            System.out.println("[*] PaymentMessage = null");
             return;
 
-        }else{
+        } else {
 
-        sendPaymentMessage(paymentMessage);
-	System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) +" , "+ String.valueOf(paymentMessage.getCreateTime()));
+            sendPaymentMessage(paymentMessage);
+            System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) + " , " + String.valueOf(paymentMessage.getCreateTime()));
         }
     }
 
@@ -163,40 +163,37 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         sendPaymentMsg(paymentMessage);
 
 //<<<<<<< HEAD
-//	Object T = null;
-//	Object U = null;
-//	try{
-//		T = Taobaohashmap.get(paymentMessage.getOrderId());
-//		U = Tmallhashmap.get(paymentMessage.getOrderId());
-//	}catch(Exception e)
-//	{
-//	    System.out.println("[*] Again.");
-//	}
-//        if(T == null)
-//	{
-//		if(U == null)
-//			return;
-//		else{
-//		    sendTmallMsg(paymentMessage);
-//		}
-//	}
-//	else{
-//		if(U == null)
-//			return;
-//		else{
-//		    sendTaobaoMsg(paymentMessage);
-//		}
-//	}
+        Object T = null;
+        Object U = null;
+        try {
+            T = Taobaohashmap.get(paymentMessage.getOrderId());
+            U = Tmallhashmap.get(paymentMessage.getOrderId());
+        } catch (Exception e) {
+            System.out.println("[*] Again.");
+        }
+        if (T == null) {
+            if (U == null)
+                return;
+            else {
+                sendTmallMsg(paymentMessage);
+            }
+        } else {
+            if (U == null)
+                return;
+            else {
+                sendTaobaoMsg(paymentMessage);
+            }
+        }
 //=======
 
-        Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
-        if ( isTaobao != null && isTaobao == 1 ) {
-            sendTaobaoMsg(paymentMessage);
-        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) != null) {
-            sendTmallMsg(paymentMessage);
-        } else {
-
-        }
+//        Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
+//        if ( isTaobao != null && isTaobao == 1 ) {
+//            sendTaobaoMsg(paymentMessage);
+//        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) != null) {
+//            sendTmallMsg(paymentMessage);
+//        } else {
+//
+//        }
 
     }
 
@@ -293,11 +290,11 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     temp.setCreateTime(0);  // timestamp os 0 represents ending.
                 } else {
                     try {
-			
+
                         PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
                         //日志会很大
-                    	System.out.println("[*]Origin: " + paymentMessage.toString());
-                        temp.setCreateTime( timestampToMinutestamp(paymentMessage.getCreateTime()) );
+                        System.out.println("[*]Origin: " + paymentMessage.toString());
+                        temp.setCreateTime(timestampToMinutestamp(paymentMessage.getCreateTime()));
                         temp.setOrderId(paymentMessage.getOrderId());
                         temp.setPayAmount(paymentMessage.getPayAmount());
                         temp.setPayPlatform(paymentMessage.getPayPlatform());
@@ -324,8 +321,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     System.out.println("Got the end signal of " + RaceConfig.MqTaobaoTradeTopic);
                     continue;
                 }
-               
 
+                try {
                     OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
 
 
@@ -336,8 +333,11 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                         LOG.info("Put into TaobaoHashmap failed!");
                         e.printStackTrace();
                     }
-                    
-              
+                } catch (Exception e) {
+                    System.out.println("DeSerialize Failed!");
+                    e.printStackTrace();
+                }
+
 
             } else if (topic.equals(RaceConfig.MqTmallTradeTopic)) {
                 //Tmall Msg.
@@ -346,7 +346,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     System.out.println("Got the end signal of " + RaceConfig.MqTmallTradeTopic);
                     continue;
                 }
-                try{
+                try {
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
                     try {
                         Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
