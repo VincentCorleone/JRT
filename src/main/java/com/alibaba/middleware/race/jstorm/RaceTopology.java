@@ -26,12 +26,13 @@ import java.util.Map;
  */
 public class RaceTopology {
 
-    private static Config conf = new Config();
+    private static Config conf;
     private static Logger LOG = LoggerFactory.getLogger(RaceTopology.class);
 
 
     public static void main(String[] args) throws Exception {
         //conf只存放jstorm的配置和metaQ消费组配置项
+        conf = new Config();
         conf.put("topology.name",RaceConfig.JstormTopologyName);
 
         conf.put("meta.consumer.group",RaceConfig.MetaConsumerGroup);

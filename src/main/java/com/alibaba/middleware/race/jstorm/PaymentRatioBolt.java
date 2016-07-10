@@ -23,14 +23,26 @@ public class PaymentRatioBolt implements IRichBolt {
     protected OutputCollector collector;
     private static Logger LOG = LoggerFactory.getLogger(PaymentRatioBolt.class);
 
-    HashMap<String, PaymentAmountBin> hashmap = new HashMap<String, PaymentAmountBin>();
-    protected int minMinutestamp = 0;
-    protected int maxMinutestamp = 0;
+    HashMap<String, PaymentAmountBin> hashmap;
+    protected int minMinutestamp ;
+    protected int maxMinutestamp ;
 
-    //必须是60的倍数
-    protected final int rangeSizeOnInputTair = 3600;
-    protected final int offset = 600;
 
+    protected int rangeSizeOnInputTair;
+    protected int offset;
+
+
+    @Override
+    public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
+        this.collector = collector;
+        new TairOperatorImpl();
+        hashmap = new HashMap<String, PaymentAmountBin>();
+        minMinutestamp = 0;
+        maxMinutestamp = 0;
+        //必须是60的倍数
+        rangeSizeOnInputTair = 3600;
+        offset = 600;
+    }
 
     @Override
     public void execute(Tuple tuple) {
@@ -60,11 +72,7 @@ public class PaymentRatioBolt implements IRichBolt {
 
     }
 
-    @Override
-    public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
-        this.collector = collector;
-        new TairOperatorImpl();
-    }
+
 
     @Override
     public void cleanup() {
