@@ -55,8 +55,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
     protected transient DefaultMQPushConsumer consumer;
 
-    protected transient HashMap<Long, Short> Taobaohashmap = new HashMap<>();
-    protected transient HashMap<Long, Short> Tmallhashmap = new HashMap<>();
+    protected transient HashMap<Long, Short> Taobaohashmap = new HashMap<Long, Short>();
+    protected transient HashMap<Long, Short> Tmallhashmap = new HashMap<Long, Short>();
 
     long sendingCount;
     long startTime;
@@ -142,8 +142,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         }
         if (paymentMessage == null) {
             return;
-        }
-        else{
+        }else{
         sendPaymentMessage(paymentMessage);
         }
     }
@@ -152,10 +151,10 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         if (paymentMessage == null) {
             return;
         }
-        
-        if (Taobaohashmap.get(paymentMessage.getOrderId()) == 1) {
+        Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
+        if ( isTaobao != null && isTaobao == 1 ) {
             sendTaobaoMsg(paymentMessage);
-        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) == 1) {
+        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) != null) {
             sendTmallMsg(paymentMessage);
         } else {
 
@@ -268,6 +267,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
                 try {
                     sendingQueue.offer(temp);
+                    LOG.info("Sending queue of paytopic successfully!");
                 } catch (Exception e) {
                     System.out.println("offer failed");
                     e.printStackTrace();
@@ -287,6 +287,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
                     try {
                         Taobaohashmap.put(taobaoMessage.getOrderId(), (short) 1);
+                        LOG.info("Put into TaobaoHashmap successfully!");
                     } catch (Exception e) {
                     
                         System.out.println("Write-in Hashmap failed.");
@@ -308,6 +309,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
                     try {
                         Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
+                        LOG.info("Put into TmallHashmap successfully!");
                     } catch (Exception e) {
                         System.out.println("Write-in Hashmap failed.");
                         e.printStackTrace();
