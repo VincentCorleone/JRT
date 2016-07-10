@@ -40,6 +40,10 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     private static Logger LOG = LoggerFactory.getLogger(RaceSpout.class);
 
 
+    private static int timestampToMinutestamp(long timestamp){
+        return (int) (timestamp / 60000) * 60;
+    }
+
     protected transient SpoutOutputCollector collector;
 
 
@@ -151,6 +155,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         if (paymentMessage == null) {
             return;
         }
+        sendPaymentMsg(paymentMessage);
+
         Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
         if ( isTaobao != null && isTaobao == 1 ) {
             sendTaobaoMsg(paymentMessage);
@@ -159,7 +165,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         } else {
 
         }
-        sendPaymentMsg(paymentMessage);
+
     }
 
     @Override
@@ -256,7 +262,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 } else {
                     try {
                         PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
-                        temp.setCreateTime((int) (paymentMessage.getCreateTime() / 6000) * 60);
+                        temp.setCreateTime( timestampToMinutestamp(paymentMessage.getCreateTime()) );
                         temp.setOrderId(paymentMessage.getOrderId());
                         temp.setPayAmount(paymentMessage.getPayAmount());
                         temp.setPayPlatform(paymentMessage.getPayPlatform());
