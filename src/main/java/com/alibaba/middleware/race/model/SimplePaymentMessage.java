@@ -1,7 +1,7 @@
 package com.alibaba.middleware.race.model;
 
 import java.io.Serializable;
-import java.util.Random;
+
 
 
 /**

@@ -11,7 +11,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.alibaba.middleware.race.RaceUtils;
 /**
  * 读写tair所需要的集群信息，如masterConfigServer/slaveConfigServer地址/
  * group 、namespace我们都会在正式提交代码前告知选手

@@ -9,8 +9,6 @@ import backtype.storm.tuple.Tuple;
 
 import com.alibaba.middleware.race.RaceConfig;
 import com.alibaba.middleware.race.Tair.TairOperatorImpl;
-import com.alibaba.middleware.race.model.PaymentAmountBin;
-import com.alibaba.middleware.race.model.PaymentMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

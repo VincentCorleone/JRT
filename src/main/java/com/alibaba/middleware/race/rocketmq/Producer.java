@@ -30,7 +30,7 @@ public class Producer {
      * @throws InterruptedException
      */
     public static void beiginProduce() throws MQClientException, InterruptedException {
-        DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+        DefaultMQProducer producer = new DefaultMQProducer("TestProduceGroup");
 
         //在本地搭建好broker后,记得指定nameServer的地址
         producer.setNamesrvAddr("116.56.129.194:9876");
