@@ -53,13 +53,16 @@ public class PaymentRatioBolt implements IRichBolt {
             double paymentAmount = (double) tuple.getValueByField(RaceConfig.PaymentAmount);
             short platform = (short) tuple.getValueByField(RaceConfig.PaymentAmount);
 
+
             if (minutestamp == 0) {
                 hashMapAllToTair();
+                LOG.info( " the end of payment msg");
             } else {
+                LOG.info( "minutestamp:" + minutestamp + ",paymentAmount:" + paymentAmount + ",platform:" + platform);
                 setRange(minutestamp);
                 String minutestampStr = String.valueOf(minutestamp);
                 String resultString = putInHashMap(minutestampStr, platform, paymentAmount);
-                LOG.info(resultString);
+                LOG.info("[*] Put " + resultString + " into HashMap");
             }
             collector.ack(tuple);
         }
