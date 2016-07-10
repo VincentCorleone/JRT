@@ -171,9 +171,9 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
 
-        declarer.declareStream(RaceConfig.MqPayTopic, new Fields("timestamp", "paymentamount", "platform"));
-        declarer.declareStream(RaceConfig.MqTaobaoTradeTopic, new Fields("timestamp", "paymentamount"));
-        declarer.declareStream(RaceConfig.MqTmallTradeTopic, new Fields("timestamp", "paymentamount"));
+        declarer.declareStream(RaceConfig.MqPayTopic, new Fields(RaceConfig.Minutestamp, RaceConfig.PaymentAmount, RaceConfig.Platform));
+        declarer.declareStream(RaceConfig.MqTaobaoTradeTopic, new Fields(RaceConfig.Minutestamp, RaceConfig.PaymentAmount));
+        declarer.declareStream(RaceConfig.MqTmallTradeTopic, new Fields(RaceConfig.Minutestamp, RaceConfig.PaymentAmount));
     }
 
     private void updateSendTps() {
