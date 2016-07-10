@@ -26,4 +26,16 @@ public class RaceConfig implements Serializable {
     public static String TairSlaveConfigServer = "";
     public static String TairGroup = "group_1";
     public static Integer TairNamespace = 0;
+
+
+    //这些是Fields的名称
+    public static String Minutestamp = "Minutestamp";
+    public static String PaymentAmount = "PaymentAmount";
+    public static String Platform = "Platform";
+    //这些是Spout和Bolt的名称
+    public static String RaceSpout = "Minutestamp";
+    public static String PaymentRatioBolt = "PaymentRatio";
+    public static String TaobaoBolt = "TaobaoBolt";
+    public static String TmallBolt = "TmallBolt";
+
 }
