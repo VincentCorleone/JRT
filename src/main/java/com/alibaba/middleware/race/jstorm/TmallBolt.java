@@ -7,6 +7,7 @@ import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Tuple;
 
+
 import com.alibaba.middleware.race.RaceConfig;
 import com.alibaba.middleware.race.Tair.TairOperatorImpl;
 import com.alibaba.middleware.race.model.PaymentAmountBin;
@@ -127,12 +128,14 @@ public class TmallBolt implements IRichBolt {
     }
 
     @Override
+
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         this.collector = collector;
 
     }
 
     @Override
+
     public void cleanup() {
         // TODO Auto-generated method stub
 
@@ -140,8 +143,10 @@ public class TmallBolt implements IRichBolt {
 
     @Override
     public Map<String, Object> getComponentConfiguration() {
+
         // TODO Auto-generated method stub
         return null;
     }
+
 
 }

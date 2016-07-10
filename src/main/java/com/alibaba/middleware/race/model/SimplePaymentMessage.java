@@ -28,7 +28,7 @@ public class SimplePaymentMessage implements Serializable{
     /**
      * 付款记录创建时间
      */
-    private int createTime; //13位数，毫秒级时间戳，初赛要求的时间都是指该时间
+    private int createTime; //10位数，秒级时间戳，为整分时间戳
 
     //Kryo默认需要无参数构造函数
     public SimplePaymentMessage() {

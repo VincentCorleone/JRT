@@ -6,7 +6,6 @@ import backtype.storm.topology.IRichSpout;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
-import backtype.storm.utils.Utils;
 import com.alibaba.jstorm.common.metric.AsmHistogram;
 import com.alibaba.jstorm.metric.MetricClient;
 import com.alibaba.jstorm.utils.JStormUtils;
@@ -26,21 +25,19 @@ import com.alibaba.rocketmq.common.message.MessageExt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.HashMap;
 
-public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
+public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
 
-	private static Logger LOG = LoggerFactory.getLogger(RaceSpout.class);
+    private static Logger LOG = LoggerFactory.getLogger(RaceSpout.class);
 
 
     protected SpoutOutputCollector collector;
@@ -57,16 +54,16 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
     protected transient AsmHistogram processHistogram;
 
     protected transient DefaultMQPushConsumer consumer;
-    
-    protected transient HashMap<Integer,Integer> Taobaohashmap = new HashMap<Integer,Integer>();
-    protected transient HashMap<Integer,Integer> Tmallhashmap  = new HashMap<Integer,Integer>();
-    
+
+    protected transient HashMap<Integer, Short> Taobaohashmap = new HashMap<>();
+    protected transient HashMap<Integer, Short> Tmallhashmap = new HashMap<>();
+
     long sendingCount;
     long startTime;
     boolean isStatEnable;
     int sendNumPerNexttuple;
 
-    public RaceSpout(){
+    public RaceSpout() {
 
     }
 
@@ -78,17 +75,14 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
     }
 
 
-
-
     @Override
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
         this.collector = collector;
 
         this.id = context.getThisComponentId() + ":" + context.getThisTaskId();
-        
+
         this.sendingQueue = new LinkedBlockingDeque<SimplePaymentMessage>();
 
-        
 
         this.flowControl = JStormUtils.parseBoolean(
                 conf.get(RocketMQClientConfig.META_SPOUT_FLOW_CONTROL), true);
@@ -99,7 +93,7 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
         sb.append("Begin to init MetaSpout:").append(id);
         sb.append(", flowControl:").append(flowControl);
         sb.append(", autoAck:").append(autoAck);
-        LOG.info( sb.toString());
+        LOG.info(sb.toString());
 
         initMetricClient(context);
 
@@ -117,7 +111,6 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
                     + " already exist consumer in current worker, don't need to create again! ");
 
         }
-
 
 
         sendingCount = 0;
@@ -140,30 +133,28 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
 //        updateSendTps();
 
         SimplePaymentMessage paymentMessage = null;
-       
-        try { 
-            paymentMessage = sendingQueue.take();
-        }
-        catch (InterruptedException e) {
-           System.out.println("[*] Taking Element from queue failed.");
-           e.printStackTrace();
-        }
 
-        if (paymentMessage == null ) {
-            return ;
+        try {
+            paymentMessage = sendingQueue.take();
+        } catch (InterruptedException e) {
+            System.out.println("[*] Taking Element from queue failed.");
+            e.printStackTrace();
         }
-        if (Taobaohashmap.get(paymentMessage.getOrderId()) == 1)
-        {
-        	sendtaobaoTuple(paymentMessage);
+        sendPaymentMessage(paymentMessage);
+    }
+
+    private void sendPaymentMessage(SimplePaymentMessage paymentMessage) {
+        if (paymentMessage == null) {
+            return;
         }
-        else if(Tmallhashmap.get(paymentMessage.getOrderId()) == 1)
-    	{
-        	sendtmallTuple(paymentMessage);
-    	}
-        else{
-        	;
+        if (Taobaohashmap.get(paymentMessage.getOrderId()) == 1) {
+            sendTaobaoMsg(paymentMessage);
+        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) == 1) {
+            sendTmallMsg(paymentMessage);
+        } else {
+
         }
-        sendpaymentTuple(paymentMessage);
+        sendPaymentMsg(paymentMessage);
     }
 
     @Override
@@ -179,10 +170,10 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        
-        declarer.declareStream(RaceConfig.MqPayTopic, new Fields("timestamp","paymentamount","platform"));
-        declarer.declareStream(RaceConfig.MqTaobaoTradeTopic, new Fields("timestamp","paymentamount"));
-        declarer.declareStream(RaceConfig.MqTmallTradeTopic, new Fields("timestamp","paymentamount"));
+
+        declarer.declareStream(RaceConfig.MqPayTopic, new Fields(RaceConfig.Minutestamp, RaceConfig.PaymentAmount, RaceConfig.Platform));
+        declarer.declareStream(RaceConfig.MqTaobaoTradeTopic, new Fields(RaceConfig.Minutestamp, RaceConfig.PaymentAmount));
+        declarer.declareStream(RaceConfig.MqTmallTradeTopic, new Fields(RaceConfig.Minutestamp, RaceConfig.PaymentAmount));
     }
 
     private void updateSendTps() {
@@ -223,128 +214,103 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
     }
 
 
-
     @Override
     public Map<String, Object> getComponentConfiguration() {
         // TODO Auto-generated method stub
         return null;
     }
 
-    public void sendtaobaoTuple(SimplePaymentMessage message) {
-        
-        collector.emit(RaceConfig.MqTaobaoTradeTopic,new Values(message.getCreateTime(),message.getPayAmount()));
+    public void sendTaobaoMsg(SimplePaymentMessage message) {
+
+        collector.emit(RaceConfig.MqTaobaoTradeTopic, new Values(message.getCreateTime(), message.getPayAmount()));
     }
-    public void sendtmallTuple(SimplePaymentMessage message) {
-        
-        collector.emit(RaceConfig.MqTmallTradeTopic,new Values(message.getCreateTime(),message.getPayAmount()));
-    }   
-    public void sendpaymentTuple(SimplePaymentMessage message) {
-       
-        collector.emit(RaceConfig.MqPayTopic,new Values(message.getCreateTime(),message.getPayAmount()),message.getPayPlatform());
+
+    public void sendTmallMsg(SimplePaymentMessage message) {
+
+        collector.emit(RaceConfig.MqTmallTradeTopic, new Values(message.getCreateTime(), message.getPayAmount()));
     }
+
+    public void sendPaymentMsg(SimplePaymentMessage message) {
+
+        collector.emit(RaceConfig.MqPayTopic, new Values(message.getCreateTime(), message.getPayAmount()), message.getPayPlatform());
+    }
+
     @Override
-    public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,ConsumeConcurrentlyContext context) {
-
-        List<SimplePaymentMessage> PaymentMessages = new ArrayList<SimplePaymentMessage>();
-     
-//    from consumer.java
+    public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
         for (MessageExt msg : msgs) {
-
-            byte [] body = msg.getBody();
+            byte[] body = msg.getBody();
             String topic = msg.getTopic();
-            
-            if (topic.equals(RaceConfig.MqPayTopic)){
-            	//Payment Msg.
-            	if (body.length == 2 && body[0] == 0 && body[1] == 0) {
+
+            if (topic.equals(RaceConfig.MqPayTopic)) {
+                //Payment Msg.
+                SimplePaymentMessage temp = new SimplePaymentMessage();
+                if (body.length == 2 && body[0] == 0 && body[1] == 0) {
                     //Info: 生产者停止生成数据, 并不意味着马上结束
-                    System.out.println("Got the end signal");
-                    SimplePaymentMessage paymentMessage = new SimplePaymentMessage();
-                    paymentMessage.setCreateTime(0);  // timestamp os 0 represents ending.
-                    try{
-                    	sendingQueue.offer(paymentMessage);
-                    	}
-                    	catch(Exception e){
-                    		System.out.println("offer failed");
-                    		e.printStackTrace();
-                    		 return ConsumeConcurrentlyStatus.RECONSUME_LATER;
-                    	}
-                    continue;
-                }
-            	try{
-            	PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
-            	SimplePaymentMessage temp = new SimplePaymentMessage();
-            	temp.setCreateTime((int)(paymentMessage.getCreateTime()/6000)*60);
-            	temp.setOrderId(paymentMessage.getOrderId());
-            	temp.setPayAmount(paymentMessage.getPayAmount());
-            	temp.setPayPlatform(paymentMessage.getPayPlatform());
-            	try{
-            	sendingQueue.offer(temp);
-            	}
-            	catch(Exception e){
-            		System.out.println("offer failed");
-            		e.printStackTrace();
-            		 return ConsumeConcurrentlyStatus.RECONSUME_LATER;
-            	}
-            	}
-            	catch(Exception e){
-            		System.out.println("DeSerialize Failed!");
-            	}
-            }
-            
-            if(topic.equals(RaceConfig.MqTaobaoTradeTopic)){
-            	//Taobao Msg.
-            	if (body.length == 2 && body[0] == 0 && body[1] == 0) {
-                    //Info: 生产者停止生成数据, 并不意味着马上结束
-                    System.out.println("Got the end signal");
-                    continue;
-                }
-            	try{
-            	OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
-            	
-                try{
-                Taobaohashmap.put((int)(taobaoMessage.getCreateTime()/6000)*60, 1);
-                }
-                catch(Exception e){
-                	System.out.println("Write-in Hashmap failed.");
-                	e.printStackTrace();
-                }
-            	}catch(Exception e){
-            		System.out.println("DeSerialize Failed!");
-            		e.printStackTrace();
-            	}
-                
-            }
-            if(topic.equals(RaceConfig.MqTmallTradeTopic)){
-            	//Tmall Msg.
-            	if (body.length == 2 && body[0] == 0 && body[1] == 0) {
-                    //Info: 生产者停止生成数据, 并不意味着马上结束
-                    System.out.println("Got the end signal");
-                    continue;
-                }
-            	try{
-            	OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
-                try{
-                    Tmallhashmap.put((int)(tmallMessage.getCreateTime()/6000)*60, 1);
+                    System.out.println("Got the end signal of " + RaceConfig.MqPayTopic);
+                    temp.setCreateTime(0);  // timestamp os 0 represents ending.
+                } else {
+                    try {
+                        PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
+                        temp.setCreateTime((int) (paymentMessage.getCreateTime() / 6000) * 60);
+                        temp.setOrderId(paymentMessage.getOrderId());
+                        temp.setPayAmount(paymentMessage.getPayAmount());
+                        temp.setPayPlatform(paymentMessage.getPayPlatform());
+                    } catch (Exception e) {
+                        System.out.println("DeSerialize Failed!");
                     }
-                    catch(Exception e){
-                    	System.out.println("Write-in Hashmap failed.");
-                    	e.printStackTrace();
+                }
+
+                try {
+                    sendingQueue.offer(temp);
+                } catch (Exception e) {
+                    System.out.println("offer failed");
+                    e.printStackTrace();
+                    return ConsumeConcurrentlyStatus.RECONSUME_LATER;
+                }
+
+            } else if (topic.equals(RaceConfig.MqTaobaoTradeTopic)) {
+                //Taobao Msg.
+                if (body.length == 2 && body[0] == 0 && body[1] == 0) {
+
+                    //Info: 生产者停止生成数据, 并不意味着马上结束
+                    System.out.println("Got the end signal of " + RaceConfig.MqTaobaoTradeTopic);
+                    continue;
+                }
+                try {
+                    OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
+
+                    try {
+                        Taobaohashmap.put((int) (taobaoMessage.getCreateTime() / 6000) * 60, (short) 1);
+                    } catch (Exception e) {
+                        System.out.println("Write-in Hashmap failed.");
+                        e.printStackTrace();
                     }
-            	}
-            	catch(Exception e){
-            		System.out.println("DeSerialize Failed!");
-            		e.printStackTrace();
-            	}
-                
+                } catch (Exception e) {
+                    System.out.println("DeSerialize Failed!");
+                    e.printStackTrace();
+                }
+
+            } else if (topic.equals(RaceConfig.MqTmallTradeTopic)) {
+                //Tmall Msg.
+                if (body.length == 2 && body[0] == 0 && body[1] == 0) {
+                    //Info: 生产者停止生成数据, 并不意味着马上结束
+                    System.out.println("Got the end signal of " + RaceConfig.MqTmallTradeTopic);
+                    continue;
+                }
+                try {
+                    OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
+                    try {
+                        Tmallhashmap.put((int) (tmallMessage.getCreateTime() / 6000) * 60, (short) 1);
+                    } catch (Exception e) {
+                        System.out.println("Write-in Hashmap failed.");
+                        e.printStackTrace();
+                    }
+                } catch (Exception e) {
+                    System.out.println("DeSerialize Failed!");
+                    e.printStackTrace();
+                }
             }
-            
         }
-       
-
-            
-           return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-         
-        
-
+        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
     }
 }
