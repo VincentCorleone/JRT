@@ -273,7 +273,7 @@ public class RaceSpout implements IRichSpout ,MessageListenerConcurrently{
             	try{
             	PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
             	SimplePaymentMessage temp = new SimplePaymentMessage();
-            	temp.setCreateTime((int)paymentMessage.getCreateTime()/1000);
+            	temp.setCreateTime((int)(paymentMessage.getCreateTime()/6000)*60);
             	temp.setOrderId(paymentMessage.getOrderId());
             	temp.setPayAmount(paymentMessage.getPayAmount());
             	temp.setPayPlatform(paymentMessage.getPayPlatform());

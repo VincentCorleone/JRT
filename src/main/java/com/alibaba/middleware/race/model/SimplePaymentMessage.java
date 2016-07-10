@@ -53,7 +53,7 @@ public class SimplePaymentMessage implements Serializable{
 
 
 
-    public long getCreateTime() {
+    public int getCreateTime() {
         return createTime;
     }
 
