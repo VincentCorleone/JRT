@@ -155,7 +155,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         } else {
 
             sendPaymentMessage(paymentMessage);
-            System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) + " , " + String.valueOf(paymentMessage.getCreateTime()));
+            System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) + " , " + String.valueOf(paymentMessage.getMinutestamp()));
         }
     }
 
@@ -266,17 +266,17 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
     public void sendTaobaoMsg(SimplePaymentMessage message) {
 
-        collector.emit(RaceConfig.MqTaobaoTradeTopic, new Values(message.getCreateTime(), message.getPayAmount()));
+        collector.emit(RaceConfig.MqTaobaoTradeTopic, new Values(message.getMinutestamp(), message.getPayAmount()));
     }
 
     public void sendTmallMsg(SimplePaymentMessage message) {
 
-        collector.emit(RaceConfig.MqTmallTradeTopic, new Values(message.getCreateTime(), message.getPayAmount()));
+        collector.emit(RaceConfig.MqTmallTradeTopic, new Values(message.getMinutestamp(), message.getPayAmount()));
     }
 
     public void sendPaymentMsg(SimplePaymentMessage message) {
 
-        collector.emit(RaceConfig.MqPayTopic, new Values(message.getCreateTime(), message.getPayAmount()), message.getPayPlatform());
+        collector.emit(RaceConfig.MqPayTopic, new Values(message.getMinutestamp(), message.getPayAmount()), message.getPayPlatform());
     }
 
     @Override
@@ -291,14 +291,14 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 if (body.length == 2 && body[0] == 0 && body[1] == 0) {
                     //Info: 生产者停止生成数据, 并不意味着马上结束
                     System.out.println("Got the end signal of " + RaceConfig.MqPayTopic);
-                    temp.setCreateTime(0);  // timestamp os 0 represents ending.
+                    temp.setMinutestamp(0);  // timestamp os 0 represents ending.
                 } else {
                     try {
 
                         PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
                         //日志会很大
 //                        System.out.println("[*]Origin: " + paymentMessage.toString());
-                        temp.setCreateTime(timestampToMinutestamp(paymentMessage.getCreateTime()));
+                        temp.setMinutestamp(timestampToMinutestamp(paymentMessage.getCreateTime()));
                         temp.setOrderId(paymentMessage.getOrderId());
                         temp.setPayAmount(paymentMessage.getPayAmount());
                         temp.setPayPlatform(paymentMessage.getPayPlatform());

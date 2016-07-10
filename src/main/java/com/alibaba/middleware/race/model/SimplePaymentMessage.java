@@ -53,11 +53,11 @@ public class SimplePaymentMessage implements Serializable{
 
 
 
-    public int getCreateTime() {
+    public int getMinutestamp() {
         return createTime;
     }
 
-    public void setCreateTime(int createTime) {
+    public void setMinutestamp(int createTime) {
         this.createTime = createTime;
     }
 

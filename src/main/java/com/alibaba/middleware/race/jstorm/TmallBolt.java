@@ -23,17 +23,31 @@ public class TmallBolt implements IRichBolt {
     protected OutputCollector collector;
     private static Logger LOG = LoggerFactory.getLogger(TmallBolt.class);
 
-    public static HashMap<Integer,Double> hashmap = new HashMap<Integer,Double>();
-    public static HashMap<Integer,Double> tempmap = new HashMap<Integer,Double>();
-    public static int MaxTimeStamp = 0;
-    protected int minMinutestamp = 0;
-    protected int maxMinutestamp = 0;
-
-    //必须是60的倍数
-    protected final int rangeSizeOnInputTair = 3600;
-    protected final int offset = 600;
+    public static HashMap<Integer,Double> hashmap;
+    public static HashMap<Integer,Double> tempmap;
+    public static int MaxTimeStamp ;
+    protected int minMinutestamp;
+    protected int maxMinutestamp;
 
 
+    protected int rangeSizeOnInputTair;
+    protected int offset;
+
+
+
+	@Override
+	public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
+		this.collector = collector;
+		new TairOperatorImpl();
+		hashmap = new HashMap<Integer,Double>();
+		tempmap = new HashMap<Integer,Double>();
+		MaxTimeStamp = 0;
+		minMinutestamp = 0;
+		maxMinutestamp = 0;
+		//必须是60的倍数
+		rangeSizeOnInputTair = 3600;
+		offset = 600;
+	}
 
 
 
@@ -125,12 +139,7 @@ public class TmallBolt implements IRichBolt {
 
     }
 
-    @Override
 
-    public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
-        this.collector = collector;
-		new TairOperatorImpl();
-    }
 
     @Override
 
