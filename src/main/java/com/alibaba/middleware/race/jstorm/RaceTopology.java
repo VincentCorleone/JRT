@@ -4,6 +4,7 @@ import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
 import backtype.storm.topology.TopologyBuilder;
+import backtype.storm.tuple.Fields;
 import com.alibaba.jstorm.utils.JStormUtils;
 import com.alibaba.middleware.race.RaceConfig;
 import com.alibaba.middleware.race.rocketmq.Producer;
@@ -32,8 +33,6 @@ public class RaceTopology {
 
     public static void main(String[] args) throws Exception {
         //conf只存放jstorm的配置和metaQ消费组配置项
-        conf.put("topology.writer.parallel",1);
-        conf.put("topology.spout.parallel",1);
         conf.put("topology.name",RaceConfig.JstormTopologyName);
         conf.put("storm.cluster.mode","local");
 
@@ -51,17 +50,12 @@ public class RaceTopology {
     private static TopologyBuilder setupBuilder() throws Exception {
         TopologyBuilder builder = new TopologyBuilder();
 
-        int writerParallel = JStormUtils.parseInt(
-                conf.get("topology.writer.parallel"), 1);
+        builder.setSpout(RaceConfig.RaceSpout, new RaceSpout(), 1);
 
-        int spoutParallel = JStormUtils.parseInt(
-                conf.get("topology.spout.parallel"), 1);
-
-        builder.setSpout("RaceSpout", new RaceSpout(), spoutParallel);
-
-        builder.setBolt("PaymentRatioBolt", new PaymentRatioBolt(), writerParallel)
-                .shuffleGrouping("RaceSpout");
-
+        builder.setBolt(RaceConfig.PaymentRatioBolt, new PaymentRatioBolt(), 1)
+                .fieldsGrouping(RaceConfig.MqPayTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+        builder.setBolt(RaceConfig.TaobaoBolt,new TaobaoBolt(),1).fieldsGrouping(RaceConfig.MqTaobaoTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
+        builder.setBolt(RaceConfig.TmallBolt,new TmallBolt(),1).fieldsGrouping(RaceConfig.MqTmallTradeTopic,RaceConfig.RaceSpout,new Fields(RaceConfig.Minutestamp));
         return builder;
     }
 
