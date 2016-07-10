@@ -17,15 +17,15 @@ public class RaceConfig implements Serializable {
     public static String MqPayTopic = "MiddlewareRaceTestData_Pay";
     public static String MqTmallTradeTopic = "MiddlewareRaceTestData_TMOrder";
     public static String MqTaobaoTradeTopic = "MiddlewareRaceTestData_TBOrder";
-//    public static String TairConfigServer = "10.101.72.127:5198";
-//    public static String TairSlaveConfigServer = "10.101.72.128:5198";
-//    public static String TairGroup = "group_tianchi";
-//    public static Integer TairNamespace = 35431;
+    public static String TairConfigServer = "10.101.72.127:5198";
+    public static String TairSlaveConfigServer = "10.101.72.128:5198";
+    public static String TairGroup = "group_tianchi";
+    public static Integer TairNamespace = 35431;
     //本地模式
-    public static String TairConfigServer = "116.56.129.194:5198";
-    public static String TairSlaveConfigServer = "";
-    public static String TairGroup = "group_1";
-    public static Integer TairNamespace = 0;
+//    public static String TairConfigServer = "116.56.129.194:5198";
+//    public static String TairSlaveConfigServer = "";
+//    public static String TairGroup = "group_1";
+//    public static Integer TairNamespace = 0;
 
 
     //这些是Fields的名称
@@ -37,5 +37,7 @@ public class RaceConfig implements Serializable {
     public static String PaymentRatioBolt = "PaymentRatio";
     public static String TaobaoBolt = "TaobaoBolt";
     public static String TmallBolt = "TmallBolt";
+
+    public static boolean LocalMode = false;
 
 }

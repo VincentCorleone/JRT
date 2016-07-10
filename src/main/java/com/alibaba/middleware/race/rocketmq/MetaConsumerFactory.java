@@ -40,21 +40,24 @@ public class MetaConsumerFactory {
         LOG.info(sb.toString());
         
         consumer = new DefaultMQPushConsumer(config.getConsumerGroup());
-        
-        String nameServer = config.getNameServer();
-        if ( nameServer != null) {
-			String namekey = "rocketmq.namesrv.domain";
 
-			String value = System.getProperty(namekey);
-			// this is for alipay
-			if (value == null) {
 
-				System.setProperty(namekey, nameServer);
-			} else if (value.equals(nameServer) == false) {
-				throw new Exception(
-						"Different nameserver address in the same worker "
-								+ value + ":" + nameServer);
+		if(RaceConfig.LocalMode){
+			String nameServer = config.getNameServer();
+			if ( nameServer != null) {
+				String namekey = "rocketmq.namesrv.domain";
 
+				String value = System.getProperty(namekey);
+				// this is for alipay
+				if (value == null) {
+
+					System.setProperty(namekey, nameServer);
+				} else if (value.equals(nameServer) == false) {
+					throw new Exception(
+							"Different nameserver address in the same worker "
+									+ value + ":" + nameServer);
+
+				}
 			}
 		}
         

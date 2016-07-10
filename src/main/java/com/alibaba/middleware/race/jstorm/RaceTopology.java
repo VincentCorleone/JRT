@@ -33,13 +33,14 @@ public class RaceTopology {
     public static void main(String[] args) throws Exception {
         //conf只存放jstorm的配置和metaQ消费组配置项
         conf.put("topology.name",RaceConfig.JstormTopologyName);
-        conf.put("storm.cluster.mode","local");
 
         conf.put("meta.consumer.group",RaceConfig.MetaConsumerGroup);
 //		conf.put("meta.nameserver","116.56.129.194:9876");
 
         //本地模式：启动生产者
+        if(RaceConfig.LocalMode){
         new Producer().beiginProduce();
+        }
 
         TopologyBuilder builder = setupBuilder();
 
@@ -60,7 +61,7 @@ public class RaceTopology {
 
     private static void submitTopology(TopologyBuilder builder) {
         try {
-            if (local_mode(conf)) {
+            if (RaceConfig.LocalMode) {
 
                 LocalCluster cluster = new LocalCluster();
 
@@ -82,15 +83,4 @@ public class RaceTopology {
         }
     }
 
-    public static boolean local_mode(Map conf) {
-        String mode = (String) conf.get(Config.STORM_CLUSTER_MODE);
-        if (mode != null) {
-            if (mode.equals("local")) {
-                return true;
-            }
-        }
-
-        return false;
-
-    }
 }
