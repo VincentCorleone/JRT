@@ -33,7 +33,7 @@ public class TmallBolt implements IRichBolt {
     protected final int rangeSizeOnInputTair = 3600;
     protected final int offset = 600;
 
-    private TairOperatorImpl tairOperator = new TairOperatorImpl();
+
 
 
 
@@ -98,7 +98,7 @@ public class TmallBolt implements IRichBolt {
     					int intkey     = Key.intValue();
     					String partkey = String.valueOf(intkey);
     					String keY = RaceConfig.prex_tmall + RaceConfig.teamcode + "_" + partkey;
-    					TairOperatorImpl.tairManager.put(0,keY,Value);
+    					TairOperatorImpl.write(keY,Value);
     				}
     				
     			}
@@ -129,7 +129,7 @@ public class TmallBolt implements IRichBolt {
 
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         this.collector = collector;
-
+		new TairOperatorImpl();
     }
 
     @Override
