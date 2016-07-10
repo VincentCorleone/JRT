@@ -63,7 +63,7 @@ public class TmallBolt implements IRichBolt {
     			}
     			else{
     				try{
-    					TmallBolt.hashmap.put(Createtime,value+PaymentAmount);
+    					TmallBolt.hashmap.put(Createtime,new Double(value+PaymentAmount));
     				}
     				catch(Exception e)
     				{

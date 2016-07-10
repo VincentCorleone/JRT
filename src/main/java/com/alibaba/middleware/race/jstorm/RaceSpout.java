@@ -34,7 +34,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     /**
      *
      */
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
 
     private static Logger LOG = LoggerFactory.getLogger(RaceSpout.class);
@@ -134,17 +134,20 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
         SimplePaymentMessage paymentMessage = null;
 
-        try {
+	try{
             paymentMessage = sendingQueue.take();
-        } catch (InterruptedException e) {
-            System.out.println("[*] Taking Element from queue failed.");
-            e.printStackTrace();
-        }
+		 System.out.println("[*] Taking from Queue.");
+        }catch(Exception e){
+		System.out.println("Taking from queue Wrong!");
+	}
         if (paymentMessage == null) {
+	 System.out.println("[*] PaymentMessage = null");
             return;
         }
         else{
+	
         sendPaymentMessage(paymentMessage);
+	System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) +" , "+ String.valueOf(paymentMessage.getCreateTime()));
         }
     }
 
@@ -152,14 +155,30 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         if (paymentMessage == null) {
             return;
         }
-        
-        if (Taobaohashmap.get(paymentMessage.getOrderId()) == 1) {
-            sendTaobaoMsg(paymentMessage);
-        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) == 1) {
-            sendTmallMsg(paymentMessage);
-        } else {
-
-        }
+	Object T = null;
+	Object U = null;
+	try{
+		T = Taobaohashmap.get(paymentMessage.getOrderId());
+		U = Tmallhashmap.get(paymentMessage.getOrderId());
+	}catch(Exception e)
+	{
+	    System.out.println("[*] Again.");
+	}
+        if(T == null)
+	{
+		if(U == null)
+			return;
+		else{
+		    sendTmallMsg(paymentMessage);
+		}
+	}
+	else{
+		if(U == null)
+			return;
+		else{
+		    sendTaobaoMsg(paymentMessage);
+		}
+	}
         sendPaymentMsg(paymentMessage);
     }
 
@@ -246,7 +265,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         for (MessageExt msg : msgs) {
             byte[] body = msg.getBody();
             String topic = msg.getTopic();
-
+            System.out.println("[*] Cosuming topic: " + topic);
             if (topic.equals(RaceConfig.MqPayTopic)) {
                 //Payment Msg.
                 SimplePaymentMessage temp = new SimplePaymentMessage();
@@ -256,8 +275,10 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     temp.setCreateTime(0);  // timestamp os 0 represents ending.
                 } else {
                     try {
+			
                         PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
-                        temp.setCreateTime((int) (paymentMessage.getCreateTime() / 6000) * 60);
+                    	System.out.println("[*]Origin: " + paymentMessage.toString());
+			    temp.setCreateTime((int) (paymentMessage.getCreateTime() / 6000) * 60);
                         temp.setOrderId(paymentMessage.getOrderId());
                         temp.setPayAmount(paymentMessage.getPayAmount());
                         temp.setPayPlatform(paymentMessage.getPayPlatform());
@@ -268,6 +289,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
                 try {
                     sendingQueue.offer(temp);
+		System.out.println("[*] Write in Queue.");
                 } catch (Exception e) {
                     System.out.println("offer failed");
                     e.printStackTrace();
@@ -282,20 +304,14 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     System.out.println("Got the end signal of " + RaceConfig.MqTaobaoTradeTopic);
                     continue;
                 }
-                try {
+               
+
                     OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
 
-                    try {
-                        Taobaohashmap.put(taobaoMessage.getOrderId(), (short) 1);
-                    } catch (Exception e) {
                     
-                        System.out.println("Write-in Hashmap failed.");
-                        e.printStackTrace();
-                    }
-                } catch (Exception e) {
-                    System.out.println("DeSerialize Failed!");
-                    e.printStackTrace();
-                }
+                        Taobaohashmap.put(new Long(taobaoMessage.getOrderId()),new Short((short)1));
+                    
+              
 
             } else if (topic.equals(RaceConfig.MqTmallTradeTopic)) {
                 //Tmall Msg.
@@ -304,18 +320,12 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     System.out.println("Got the end signal of " + RaceConfig.MqTmallTradeTopic);
                     continue;
                 }
-                try {
+                
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
-                    try {
-                        Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
-                    } catch (Exception e) {
-                        System.out.println("Write-in Hashmap failed.");
-                        e.printStackTrace();
-                    }
-                } catch (Exception e) {
-                    System.out.println("DeSerialize Failed!");
-                    e.printStackTrace();
-                }
+                    
+                        Tmallhashmap.put(new Long(tmallMessage.getOrderId()), new Short((short)1));
+                    
+               
             }
         }
         return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;

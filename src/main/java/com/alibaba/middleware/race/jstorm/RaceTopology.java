@@ -35,7 +35,7 @@ public class RaceTopology {
         conf.put("topology.name",RaceConfig.JstormTopologyName);
 
         conf.put("meta.consumer.group",RaceConfig.MetaConsumerGroup);
-//		conf.put("meta.nameserver","116.56.129.194:9876");
+		conf.put("meta.nameserver","116.56.129.194:9876");
 
         //本地模式：启动生产者
         if(RaceConfig.LocalMode){
