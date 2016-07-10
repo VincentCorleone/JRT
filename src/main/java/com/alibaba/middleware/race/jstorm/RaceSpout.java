@@ -293,7 +293,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
                         PaymentMessage paymentMessage = RaceUtils.readKryoObject(PaymentMessage.class, body);
                         //日志会很大
-                        System.out.println("[*]Origin: " + paymentMessage.toString());
+//                        System.out.println("[*]Origin: " + paymentMessage.toString());
                         temp.setCreateTime(timestampToMinutestamp(paymentMessage.getCreateTime()));
                         temp.setOrderId(paymentMessage.getOrderId());
                         temp.setPayAmount(paymentMessage.getPayAmount());
@@ -326,7 +326,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
 
                     if (taobaoMessage != null) {
-                        System.out.println("[*] taobaoMessage: " + taobaoMessage.toString());
+                        //集群运行时这里输出的话日志会很大
+//                        System.out.println("[*] taobaoMessage: " + taobaoMessage.toString());
 
 
                         try {
@@ -358,8 +359,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 try {
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
                     if (tmallMessage != null) {
-
-                        System.out.println("[*] TmallMessage: " + tmallMessage.toString());
+                        //集群运行时这里输出的话日志会很大
+//                        System.out.println("[*] TmallMessage: " + tmallMessage.toString());
                         try {
                             Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
                             LOG.info("Put into TmallHashmap successfully!");
