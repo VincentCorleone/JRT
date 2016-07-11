@@ -1,0 +1,92 @@
+Cloning into '/home/admin/RaceCodePre/download/41551hck2a'...
+Total 531 (delta 187), reused 531 (delta 187)
+success
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.race:preliminary.demo:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 12, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building preliminary.demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ preliminary.demo ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building preliminary.demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-assembly-plugin:2.5.3:assembly (default-cli) > package @ preliminary.demo >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ preliminary.demo ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ preliminary.demo ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 16 source files to /home/admin/RaceCodePre/download/41551hck2a/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ preliminary.demo ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ preliminary.demo ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ preliminary.demo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ preliminary.demo ---
+[INFO] Building jar: /home/admin/RaceCodePre/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] <<< maven-assembly-plugin:2.5.3:assembly (default-cli) < package @ preliminary.demo <<<
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.5.3:assembly (default-cli) @ preliminary.demo ---
+[INFO] Reading assembly descriptor: src/main/resources/assembly.xml
+[INFO] Copying files to /home/admin/RaceCodePre/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT
+[WARNING] Assembly file: /home/admin/RaceCodePre/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT is not a regular file (it may be a directory). It cannot be attached to the project build for installation or deployment.
+[WARNING] Artifact: com.alibaba.race:preliminary.demo:jar:1.0-SNAPSHOT references the same file as the assembly destination file. Moving it to a temporary location for inclusion.
+[INFO] Building jar: /home/admin/RaceCodePre/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT.jar
+[WARNING] Configuration options: 'appendAssemblyId' is set to false, and 'classifier' is missing.
+Instead of attaching the assembly file: /home/admin/RaceCodePre/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT.jar, it will become the file for main project artifact.
+NOTE: If multiple descriptors or descriptor-formats are provided for this project, the value of this file will be non-deterministic!
+[WARNING] Replacing pre-existing project main-artifact file: /home/admin/RaceCodePre/download/41551hck2a/target/archive-tmp/preliminary.demo-1.0-SNAPSHOT.jar
+with assembly file: /home/admin/RaceCodePre/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.392 s
+[INFO] Finished at: 2016-07-11T04:59:51+08:00
+[INFO] Final Memory: 30M/274M
+[INFO] ------------------------------------------------------------------------
+success
+/opt/taobao/java/bin/java
+681  [main] INFO  com.taobao.tair.impl.ConfigServer - init configs from configserver: 10.101.72.127:5198
+897  [main] INFO  com.taobao.tair.impl.ConfigServer - alive datanode: 10.101.72.127:5191
+897  [main] INFO  com.taobao.tair.impl.ConfigServer - alive datanode: 10.101.72.128:5191
+897  [main] WARN  com.taobao.tair.impl.ConfigServer - configuration inited with version: 111, bucket count: 1023, copyCount: 1
+898  [main] WARN  com.taobao.tair.impl.DefaultTairManager - DefaultTairManager [TairClient 2.3.5] started...
+899  [main] INFO  com.taobao.tair.impl.ConfigServer - init configs from configserver: 10.101.72.127:5198
+905  [main] INFO  com.taobao.tair.impl.ConfigServer - alive datanode: 10.101.72.127:5191
+906  [main] INFO  com.taobao.tair.impl.ConfigServer - alive datanode: 10.101.72.128:5191
+906  [main] WARN  com.taobao.tair.impl.ConfigServer - configuration inited with version: 111, bucket count: 1023, copyCount: 1
+906  [main] WARN  com.taobao.tair.impl.DefaultTairManager - DefaultTairManager [TairClient 2.3.5] started...
+918  [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+1028 [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using storm.yaml from resources
+1133 [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+1164 [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using storm.yaml from resources
+1205 [main] INFO  backtype.storm.utils.StormBoundedExponentialBackoffRetry - The baseSleepTimeMs [1000] the maxSleepTimeMs [30000] the maxRetries [20]
+2509 [main] INFO  backtype.storm.security.auth.ThriftClient - masterHost:11.100.174.82:8627
+2540 [main] INFO  backtype.storm.utils.StormBoundedExponentialBackoffRetry - The baseSleepTimeMs [2000] the maxSleepTimeMs [60000] the maxRetries [5]
+2593 [main] INFO  backtype.storm.StormSubmitter - Jar not uploaded to master yet. Submitting jar...
+2606 [main] INFO  backtype.storm.StormSubmitter - Uploading topology jar /home/admin/xxx/download/41551hck2a/target/preliminary.demo-1.0-SNAPSHOT.jar to assigned location: xxx/data/nimbus/inbox/966073d1-7e8a-4371-a706-b38e3bbc0a3c/stormjar-966073d1-7e8a-4371-a706-b38e3bbc0a3c.jar
+2728 [main] INFO  backtype.storm.StormSubmitter - Successfully uploaded topology jar to assigned location: xxx/data/nimbus/inbox/966073d1-7e8a-4371-a706-b38e3bbc0a3c/stormjar-966073d1-7e8a-4371-a706-b38e3bbc0a3c.jar
+2728 [main] INFO  backtype.storm.StormSubmitter - Submitting topology 41551hck2a in distributed mode with conf {"meta.nameserver":"116.56.129.194:9876","topology.backpressure.enable":false,"topology.workers":4,"topology.debug":true,"exclude.jars":"","user.group":null,"user.name":null,"meta.consumer.group":"41551hck2a","user.password":null,"topology.name":"41551hck2a","task.batch.tuple":false}
+4983 [main] INFO  backtype.storm.StormSubmitter - Finished submitting topology: 41551hck2a
+/home/admin/MIddlewareRaceTester/bin/submit.sh: line 23: 26998 Killed                  $jstormPath/bin/jstorm jar $downloadPath/$downloadName/target/$jarName $classMain $cparams
+success

@@ -1,0 +1,81 @@
+Cloning into '/home/admin/RaceCodePre/download/41118dk9yg'...
+Total 677 (delta 238), reused 677 (delta 238)
+success
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.race:preliminary.demo:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 12, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building preliminary.demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ preliminary.demo ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building preliminary.demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-assembly-plugin:2.5.3:assembly (default-cli) > package @ preliminary.demo >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ preliminary.demo ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ preliminary.demo ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 16 source files to /home/admin/RaceCodePre/download/41118dk9yg/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ preliminary.demo ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ preliminary.demo ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ preliminary.demo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ preliminary.demo ---
+[INFO] Building jar: /home/admin/RaceCodePre/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] <<< maven-assembly-plugin:2.5.3:assembly (default-cli) < package @ preliminary.demo <<<
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.5.3:assembly (default-cli) @ preliminary.demo ---
+[INFO] Reading assembly descriptor: src/main/resources/assembly.xml
+[INFO] Copying files to /home/admin/RaceCodePre/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT
+[WARNING] Assembly file: /home/admin/RaceCodePre/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT is not a regular file (it may be a directory). It cannot be attached to the project build for installation or deployment.
+[WARNING] Artifact: com.alibaba.race:preliminary.demo:jar:1.0-SNAPSHOT references the same file as the assembly destination file. Moving it to a temporary location for inclusion.
+[INFO] Building jar: /home/admin/RaceCodePre/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT.jar
+[WARNING] Configuration options: 'appendAssemblyId' is set to false, and 'classifier' is missing.
+Instead of attaching the assembly file: /home/admin/RaceCodePre/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT.jar, it will become the file for main project artifact.
+NOTE: If multiple descriptors or descriptor-formats are provided for this project, the value of this file will be non-deterministic!
+[WARNING] Replacing pre-existing project main-artifact file: /home/admin/RaceCodePre/download/41118dk9yg/target/archive-tmp/preliminary.demo-1.0-SNAPSHOT.jar
+with assembly file: /home/admin/RaceCodePre/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.809 s
+[INFO] Finished at: 2016-07-11T07:27:44+08:00
+[INFO] Final Memory: 31M/274M
+[INFO] ------------------------------------------------------------------------
+success
+/opt/taobao/java/bin/java
+474  [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+633  [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using storm.yaml from resources
+723  [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+762  [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using storm.yaml from resources
+793  [main] INFO  backtype.storm.utils.StormBoundedExponentialBackoffRetry - The baseSleepTimeMs [1000] the maxSleepTimeMs [30000] the maxRetries [20]
+2167 [main] INFO  backtype.storm.security.auth.ThriftClient - masterHost:11.100.174.82:8627
+2201 [main] INFO  backtype.storm.utils.StormBoundedExponentialBackoffRetry - The baseSleepTimeMs [2000] the maxSleepTimeMs [60000] the maxRetries [5]
+2243 [main] INFO  backtype.storm.StormSubmitter - Jar not uploaded to master yet. Submitting jar...
+2253 [main] INFO  backtype.storm.StormSubmitter - Uploading topology jar /home/admin/xxx/download/41118dk9yg/target/preliminary.demo-1.0-SNAPSHOT.jar to assigned location: xxx/data/nimbus/inbox/3eb78baf-d806-4284-a3fa-59941628ba19/stormjar-3eb78baf-d806-4284-a3fa-59941628ba19.jar
+2389 [main] INFO  backtype.storm.StormSubmitter - Successfully uploaded topology jar to assigned location: xxx/data/nimbus/inbox/3eb78baf-d806-4284-a3fa-59941628ba19/stormjar-3eb78baf-d806-4284-a3fa-59941628ba19.jar
+2389 [main] INFO  backtype.storm.StormSubmitter - Submitting topology 41118dk9yg in distributed mode with conf {"meta.nameserver":"116.56.129.194:9876","topology.backpressure.enable":false,"topology.workers":4,"topology.debug":true,"exclude.jars":"","user.group":null,"user.name":null,"meta.consumer.group":"41118dk9yg","user.password":null,"topology.name":"41118dk9yg","task.batch.tuple":false}
+2773 [main] INFO  backtype.storm.StormSubmitter - Finished submitting topology: 41118dk9yg
+success

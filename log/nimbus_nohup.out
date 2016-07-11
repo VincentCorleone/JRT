@@ -1,0 +1,20 @@
+/usr/java/jdk1.8.0_91/bin/java
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=256m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: UseCMSCompactAtFullCollection is deprecated and will likely be removed in a future release.
+Java HotSpot(TM) 64-Bit Server VM warning: CMSFullGCsBeforeCompaction is deprecated and will likely be removed in a future release.
+Java HotSpot(TM) 64-Bit Server VM warning: INFO: os::commit_memory(0x0000000720000000, 2684354560, 0) failed; error='Cannot allocate memory' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 2684354560 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /root/gxc/jstorm-rocket-mq/hs_err_pid25462.log
+/usr/java/jdk1.8.0_91/bin/java
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=256m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: UseCMSCompactAtFullCollection is deprecated and will likely be removed in a future release.
+Java HotSpot(TM) 64-Bit Server VM warning: CMSFullGCsBeforeCompaction is deprecated and will likely be removed in a future release.
+Java HotSpot(TM) 64-Bit Server VM warning: INFO: os::commit_memory(0x0000000720000000, 2684354560, 0) failed; error='Cannot allocate memory' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 2684354560 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /root/gxc/jstorm-rocket-mq/hs_err_pid25554.log

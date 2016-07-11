@@ -1,0 +1,91 @@
+Cloning into '/home/admin/RaceCodePre/download/41180ejoix'...
+Total 418 (delta 129), reused 418 (delta 129)
+success
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.race:BestFit:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 12, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BestFit 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ BestFit ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BestFit 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-assembly-plugin:2.5.3:assembly (default-cli) > package @ BestFit >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ BestFit ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ BestFit ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/admin/RaceCodePre/download/41180ejoix/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ BestFit ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ BestFit ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ BestFit ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ BestFit ---
+[INFO] Building jar: /home/admin/RaceCodePre/download/41180ejoix/target/BestFit-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] <<< maven-assembly-plugin:2.5.3:assembly (default-cli) < package @ BestFit <<<
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.5.3:assembly (default-cli) @ BestFit ---
+[INFO] Reading assembly descriptor: src/main/resources/assembly.xml
+[INFO] Copying files to /home/admin/RaceCodePre/download/41180ejoix/target/BestFit-1.0-SNAPSHOT
+[WARNING] Assembly file: /home/admin/RaceCodePre/download/41180ejoix/target/BestFit-1.0-SNAPSHOT is not a regular file (it may be a directory). It cannot be attached to the project build for installation or deployment.
+[WARNING] Artifact: com.alibaba.race:BestFit:jar:1.0-SNAPSHOT references the same file as the assembly destination file. Moving it to a temporary location for inclusion.
+[INFO] Building jar: /home/admin/RaceCodePre/download/41180ejoix/target/BestFit-1.0-SNAPSHOT.jar
+[WARNING] Configuration options: 'appendAssemblyId' is set to false, and 'classifier' is missing.
+Instead of attaching the assembly file: /home/admin/RaceCodePre/download/41180ejoix/target/BestFit-1.0-SNAPSHOT.jar, it will become the file for main project artifact.
+NOTE: If multiple descriptors or descriptor-formats are provided for this project, the value of this file will be non-deterministic!
+[WARNING] Replacing pre-existing project main-artifact file: /home/admin/RaceCodePre/download/41180ejoix/target/archive-tmp/BestFit-1.0-SNAPSHOT.jar
+with assembly file: /home/admin/RaceCodePre/download/41180ejoix/target/BestFit-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.080 s
+[INFO] Finished at: 2016-07-09T02:15:43+08:00
+[INFO] Final Memory: 28M/274M
+[INFO] ------------------------------------------------------------------------
+success
+/opt/taobao/java/bin/java
+497  [main] INFO  com.alibaba.middleware.race.jstorm.RaceTopology - hello,I am vincent
+[INFO  2016-07-09 02:15:49 ConfigServer:156 main] init configs from configserver: 10.101.72.127:5198
+[INFO  2016-07-09 02:15:49 ConfigServer:185 main] alive datanode: 10.101.72.127:5191
+[INFO  2016-07-09 02:15:49 ConfigServer:185 main] alive datanode: 10.101.72.128:5191
+[WARN  2016-07-09 02:15:49 ConfigServer:210 main] configuration inited with version: 111, bucket count: 1023, copyCount: 1
+[WARN  2016-07-09 02:15:49 DefaultTairManager:101 main] DefaultTairManager [TairClient 2.3.5] started...
+1064 [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+1202 [main] INFO  com.alibaba.jstorm.utils.LoadConf - Using storm.yaml from resources
+java.lang.RuntimeException: java.io.NotSerializableException: com.alibaba.middleware.race.Tair.TairOperatorImpl
+	at backtype.storm.utils.Utils.javaSerialize(Utils.java:143)
+	at backtype.storm.topology.TopologyBuilder.createTopology(TopologyBuilder.java:91)
+	at com.alibaba.middleware.race.jstorm.RaceTopology.main(RaceTopology.java:108)
+Caused by: java.io.NotSerializableException: com.alibaba.middleware.race.Tair.TairOperatorImpl
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at backtype.storm.utils.Utils.javaSerialize(Utils.java:139)
+	... 2 more
+/home/admin/MIddlewareRaceTester/bin/submit.sh: line 23: 13713 Killed                  $jstormPath/bin/jstorm jar $downloadPath/$downloadName/target/$jarName $classMain $cparams
+success

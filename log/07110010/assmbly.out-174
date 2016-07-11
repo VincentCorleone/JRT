@@ -1,0 +1,67 @@
+Cloning into '/home/admin/RaceCodePre/download/41180ejoix'...
+Total 344 (delta 100), reused 344 (delta 100)
+success
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.race:preliminary.demo:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 12, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building preliminary.demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ preliminary.demo ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building preliminary.demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-assembly-plugin:2.5.3:assembly (default-cli) > package @ preliminary.demo >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ preliminary.demo ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ preliminary.demo ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/admin/RaceCodePre/download/41180ejoix/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ preliminary.demo ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ preliminary.demo ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ preliminary.demo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ preliminary.demo ---
+[INFO] Building jar: /home/admin/RaceCodePre/download/41180ejoix/target/preliminary.demo-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] <<< maven-assembly-plugin:2.5.3:assembly (default-cli) < package @ preliminary.demo <<<
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.5.3:assembly (default-cli) @ preliminary.demo ---
+[INFO] Reading assembly descriptor: src/main/resources/assembly.xml
+[INFO] Copying files to /home/admin/RaceCodePre/download/41180ejoix/target/preliminary.demo-1.0-SNAPSHOT
+[WARNING] Assembly file: /home/admin/RaceCodePre/download/41180ejoix/target/preliminary.demo-1.0-SNAPSHOT is not a regular file (it may be a directory). It cannot be attached to the project build for installation or deployment.
+[WARNING] Artifact: com.alibaba.race:preliminary.demo:jar:1.0-SNAPSHOT references the same file as the assembly destination file. Moving it to a temporary location for inclusion.
+[INFO] Building jar: /home/admin/RaceCodePre/download/41180ejoix/target/preliminary.demo-1.0-SNAPSHOT.jar
+[WARNING] Configuration options: 'appendAssemblyId' is set to false, and 'classifier' is missing.
+Instead of attaching the assembly file: /home/admin/RaceCodePre/download/41180ejoix/target/preliminary.demo-1.0-SNAPSHOT.jar, it will become the file for main project artifact.
+NOTE: If multiple descriptors or descriptor-formats are provided for this project, the value of this file will be non-deterministic!
+[WARNING] Replacing pre-existing project main-artifact file: /home/admin/RaceCodePre/download/41180ejoix/target/archive-tmp/preliminary.demo-1.0-SNAPSHOT.jar
+with assembly file: /home/admin/RaceCodePre/download/41180ejoix/target/preliminary.demo-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.064 s
+[INFO] Finished at: 2016-07-07T21:34:47+08:00
+[INFO] Final Memory: 28M/271M
+[INFO] ------------------------------------------------------------------------
+success

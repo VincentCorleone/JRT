@@ -1,0 +1,125 @@
+//启动nimbus后
+[root@localhost jstorm-rocket-mq]# mvn exec:java -Dexec.mainClass="com.alibaba.aloha.meta.example.TestTopology" -e
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.jstorm:metaspout:jar:0.2.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 32, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building metaspout 0.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ metaspout ---
+01:58:46.562 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+01:58:46.576 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 2
+01:58:46.826 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+01:58:46.828 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+01:58:46.829 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+01:58:46.829 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+01:58:46.830 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+01:58:46.831 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+01:58:46.831 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+01:58:46.841 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+01:58:46.850 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+01:58:46.850 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+01:58:46.851 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+01:58:46.851 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+01:58:46.851 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+01:58:47.935 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+01:58:47.935 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+01:58:48.474 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0xd3283668420b854c (took 37 ms)
+01:58:52.291 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+01:58:52.293 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+01:58:57.578 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacity.default: 262144
+01:59:05.741 [NettyClientWorkerThread_1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+01:59:18.215 [NettyClientSelector_1] DEBUG io.netty.util.internal.Cleaner0 - java.nio.ByteBuffer.cleaner(): available
+com.alibaba.rocketmq.client.exception.MQClientException: No route info of this topic, TopicTest1
+See https://github.com/alibaba/RocketMQ/issues/44 for further details.
+	at com.alibaba.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendDefaultImpl(DefaultMQProducerImpl.java:587)
+	at com.alibaba.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:1031)
+	at com.alibaba.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:1025)
+	at com.alibaba.rocketmq.client.producer.DefaultMQProducer.send(DefaultMQProducer.java:95)
+	at com.alibaba.aloha.meta.example.TestTopology.sendMsg(TestTopology.java:75)
+	at com.alibaba.aloha.meta.example.TestTopology.main(TestTopology.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:294)
+	at java.lang.Thread.run(Thread.java:745)
+01:59:26.644 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+01:59:33.522 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+01:59:35.476 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  b.s.u.StormBoundedExponentialBackoffRetry - The baseSleepTimeMs [1000] the maxSleepTimeMs [30000] the maxRetries [20]
+01:59:37.326 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  o.a.c.f.imps.CuratorFrameworkImpl - Starting
+01:59:37.426 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG o.a.curator.CuratorZookeeperClient - Starting
+01:59:37.427 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.ConnectionState - Starting
+01:59:37.427 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.ConnectionState - reset
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=localhost
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.8.0_91
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=/usr/java/jdk1.8.0_91/jre
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=/root/software/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=/tmp
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Linux
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=3.10.0-327.el7.x86_64
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=root
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=/root
+01:59:37.509 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=/root/gxc/jstorm-rocket-mq
+01:59:37.510 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=localhost:2181/jstorm/nimbus_master sessionTimeout=20000 watcher=org.apache.curator.ConnectionState@ee9a9ff
+01:59:37.613 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.zookeeper.ClientCnxn - zookeeper.disableAutoWatchReset is false
+01:59:38.357 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:59:38.361 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+01:59:38.367 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn - Session establishment request sent on localhost/0:0:0:0:0:0:0:1:2181
+01:59:38.508 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x155cb9fae600002, negotiated timeout = 20000
+01:59:38.519 [com.alibaba.aloha.meta.example.TestTopology.main()-EventThread] INFO  o.a.c.f.state.ConnectionStateManager - State change: CONNECTED
+01:59:39.860 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn - Reading reply sessionid:0x155cb9fae600002, packet:: clientPath:null serverPath:null finished:false header:: 1,3  replyHeader:: 1,5,-101  request:: '/jstorm/nimbus_master,F  response::  
+01:59:39.870 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG o.a.c.f.imps.CuratorFrameworkImpl - Closing
+01:59:39.871 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG o.a.curator.CuratorZookeeperClient - Closing
+01:59:39.871 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.ConnectionState - Closing
+01:59:39.873 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.zookeeper.ZooKeeper - Closing session: 0x155cb9fae600002
+01:59:39.873 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.zookeeper.ClientCnxn - Closing client for session: 0x155cb9fae600002
+01:59:39.904 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn - Reading reply sessionid:0x155cb9fae600002, packet:: clientPath:null serverPath:null finished:false header:: 2,-11  replyHeader:: 2,6,0  request:: null response:: null
+01:59:39.905 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn - An exception was thrown while closing send thread for session 0x155cb9fae600002 : Unable to read additional data from server sessionid 0x155cb9fae600002, likely server has closed socket
+01:59:39.906 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.zookeeper.ClientCnxn - Disconnecting client for session: 0x155cb9fae600002
+01:59:39.906 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Session: 0x155cb9fae600002 closed
+01:59:39.963 [com.alibaba.aloha.meta.example.TestTopology.main()-EventThread] INFO  org.apache.zookeeper.ClientCnxn - EventThread shut down
+[ERROR] java.lang.RuntimeException: Failed to get master from ZK.
+java.lang.RuntimeException: Failed to get master from ZK.
+	at backtype.storm.security.auth.ThriftClient.getMaster(ThriftClient.java:131)
+	at backtype.storm.security.auth.ThriftClient.<init>(ThriftClient.java:87)
+	at backtype.storm.utils.NimbusClient.<init>(NimbusClient.java:94)
+	at backtype.storm.utils.NimbusClient.getConfiguredClientAs(NimbusClient.java:76)
+	at backtype.storm.utils.NimbusClient.getConfiguredClient(NimbusClient.java:45)
+	at backtype.storm.utils.NimbusClient.getConfiguredClient(NimbusClient.java:40)
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:115)
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:59)
+	at com.alibaba.aloha.meta.example.TestTopology.submitTopology(TestTopology.java:126)
+	at com.alibaba.aloha.meta.example.TestTopology.main(TestTopology.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:294)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: No alive nimbus 
+	at backtype.storm.security.auth.ThriftClient.getMasterByZk(ThriftClient.java:103)
+	at backtype.storm.security.auth.ThriftClient.getMaster(ThriftClient.java:128)
+	... 15 more
+01:59:40.092 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - SendThread interrupted during sleep, ignoring
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:15 min
+[INFO] Finished at: 2016-07-09T01:59:40+08:00
+[INFO] Final Memory: 15M/42M
+[INFO] ------------------------------------------------------------------------

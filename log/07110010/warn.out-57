@@ -1,0 +1,89 @@
+output
+the task-1's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:12
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+the task-2's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+the task-3's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+the task-4's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+the task-5's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:04
+the task-6's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+java.lang.NullPointerException
+	at com.alibaba.middleware.race.jstorm.RaceSpout.sendPaymentMessage(RaceSpout.java:156)
+	at com.alibaba.middleware.race.jstorm.RaceSpout.nextTuple(RaceSpout.java:147)
+	at com.alibaba.jstorm.task.execute.spout.SpoutExecutors.nextTuple(SpoutExecutors.java:175)
+	at com.alibaba.jstorm.task.execute.spout.MultipleThreadSpoutExecutors.run(MultipleThreadSpoutExecutors.java:79)
+	at com.alibaba.jstorm.callback.AsyncLoopRunnable.run(AsyncLoopRunnable.java:95)
+	at java.lang.Thread.run(Thread.java:756)
+, at 2016-07-11 00:01:56
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:04
+the task-1's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:12
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:53
+the task-2's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:53
+the task-3's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:53
+the task-4's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:54
+the task-5's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000112, at 2016-07-11 00:01:13
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:04
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:54
+the task-6's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:04
+java.lang.NullPointerException
+	at com.alibaba.middleware.race.jstorm.RaceSpout.sendPaymentMessage(RaceSpout.java:156)
+	at com.alibaba.middleware.race.jstorm.RaceSpout.nextTuple(RaceSpout.java:147)
+	at com.alibaba.jstorm.task.execute.spout.SpoutExecutors.nextTuple(SpoutExecutors.java:175)
+	at com.alibaba.jstorm.task.execute.spout.MultipleThreadSpoutExecutors.run(MultipleThreadSpoutExecutors.java:79)
+	at com.alibaba.jstorm.callback.AsyncLoopRunnable.run(AsyncLoopRunnable.java:95)
+	at java.lang.Thread.run(Thread.java:756)
+, at 2016-07-11 00:02:47
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:54
+the task-1's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:53
+Worker is dead on 11.239.173.247:6900,20160711000343, at 2016-07-11 00:03:43
+the task-2's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:53
+Worker is dead on 11.239.173.247:6900,20160711000343, at 2016-07-11 00:03:43
+the task-3's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:53
+Worker is dead on 11.239.173.247:6900,20160711000343, at 2016-07-11 00:03:43
+the task-4's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:03
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:54
+Worker is dead on 11.239.173.247:6900,20160711000343, at 2016-07-11 00:03:44
+the task-5's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000203, at 2016-07-11 00:02:04
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:54
+Worker is dead on 11.239.173.247:6900,20160711000343, at 2016-07-11 00:03:44
+the task-6's errors are: 
+Worker is dead on 11.239.173.247:6900,20160711000253, at 2016-07-11 00:02:54
+java.lang.NullPointerException
+	at com.alibaba.middleware.race.jstorm.RaceSpout.sendPaymentMessage(RaceSpout.java:156)
+	at com.alibaba.middleware.race.jstorm.RaceSpout.nextTuple(RaceSpout.java:147)
+	at com.alibaba.jstorm.task.execute.spout.SpoutExecutors.nextTuple(SpoutExecutors.java:175)
+	at com.alibaba.jstorm.task.execute.spout.MultipleThreadSpoutExecutors.run(MultipleThreadSpoutExecutors.java:79)
+	at com.alibaba.jstorm.callback.AsyncLoopRunnable.run(AsyncLoopRunnable.java:95)
+	at java.lang.Thread.run(Thread.java:756)
+, at 2016-07-11 00:03:37
+Worker is dead on 11.239.173.247:6900,20160711000343, at 2016-07-11 00:03:44

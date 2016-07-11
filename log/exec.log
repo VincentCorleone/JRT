@@ -1,0 +1,1229 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.jstorm:metaspout:jar:0.2.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 32, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building metaspout 0.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ metaspout ---
+01:08:53.080 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+01:08:53.115 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 2
+01:08:53.125 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+01:08:53.125 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+01:08:53.126 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+01:08:53.126 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+01:08:53.161 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+01:08:53.162 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+01:08:53.162 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+01:08:53.162 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+01:08:53.163 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+01:08:53.163 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+01:08:53.163 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+01:08:53.164 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+01:08:53.164 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+01:08:53.201 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+01:08:53.201 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+01:08:53.427 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG i.n.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0xc3f9afdd2515ecd2 (took 48 ms)
+01:08:53.608 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+01:08:53.610 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+01:08:54.111 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacity.default: 262144
+01:08:54.153 [NettyClientWorkerThread_1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+01:08:55.013 [NettyClientSelector_1] DEBUG io.netty.util.internal.Cleaner0 - java.nio.ByteBuffer.cleaner(): available
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B641A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1120]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B64BC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1119]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B655E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1119]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6600, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1119]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B66A2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1121]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6744, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1120]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B67E6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1120]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6888, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1120]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B692A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1122]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B69CC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1121]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6A6E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1121]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6B12, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1121]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6BB6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1123]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6C5A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1122]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6CFE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1122]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6DA2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1122]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6E46, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1124]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6EEA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1123]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B6F8E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1123]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7032, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1123]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B70D6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1125]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B717A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1124]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B721E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1124]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B72C2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1124]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7366, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1126]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B740A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1125]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B74AE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1125]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7552, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1125]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B75F6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1127]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B769A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1126]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B773E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1126]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B77E2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1126]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7886, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1128]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B792A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1127]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B79CE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1127]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7A72, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1127]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7B16, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1129]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7BBA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1128]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7C5E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1128]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7D02, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1128]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7DA6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1130]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7E4A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1129]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7EEE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1129]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B7F92, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1129]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8036, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1131]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B80DA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1130]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B817E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1130]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8222, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1130]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B82C6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1132]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B836A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1131]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B840E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1131]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B84B2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1131]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8556, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1133]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B85FA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1132]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B869E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1132]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8742, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1132]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B87E6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1134]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B888A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1133]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B892E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1133]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B89D2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1133]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8A76, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1135]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8B1A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1134]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8BBE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1134]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8C62, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1134]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8D06, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1136]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8DAA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1135]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8E4E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1135]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8EF2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1135]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B8F96, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1137]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B903A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1136]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B90DE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1136]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9182, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1136]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9226, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1138]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B92CA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1137]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B936E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1137]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9412, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1137]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B94B6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1139]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B955A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1138]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B95FE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1138]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B96A2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1138]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9746, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1140]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B97EA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1139]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B988E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1139]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9932, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1139]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B99D6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1141]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9A7A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1140]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9B1E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1140]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9BC2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1140]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9C66, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1142]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9D0A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1141]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9DAE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1141]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9E52, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1141]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9EF6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1143]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000B9F9A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1142]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA03E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1142]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA0E2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1142]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA186, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1144]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA22A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1143]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA2CE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1143]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA372, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1143]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA416, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1145]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA4BC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1144]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA562, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1144]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA608, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1144]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA6AE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1146]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA754, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1145]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA7FA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1145]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA8A0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1145]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA946, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1147]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BA9EC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1146]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAA92, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1146]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAB38, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1146]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BABDE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1148]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAC84, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1147]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAD2A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1147]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BADD0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1147]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAE76, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1149]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAF1C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1148]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BAFC2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1148]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB068, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1148]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB10E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1150]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB1B4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1149]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB25A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1149]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB300, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1149]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB3A6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1151]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB44C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1150]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB4F2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1150]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB598, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1150]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB63E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1152]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB6E4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1151]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB78A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1151]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB830, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1151]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB8D6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1153]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BB97C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1152]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBA22, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1152]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBAC8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1152]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBB6E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1154]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBC14, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1153]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBCBA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1153]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBD60, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1153]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBE06, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1155]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBEAC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1154]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBF52, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1154]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BBFF8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1154]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC09E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1156]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC144, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1155]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC1EA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1155]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC290, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1155]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC336, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1157]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC3DC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1156]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC482, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1156]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC528, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1156]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC5CE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1158]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC674, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1157]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC71A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1157]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC7C0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1157]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC866, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1159]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC90C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1158]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BC9B2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1158]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCA58, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1158]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCAFE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1160]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCBA4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1159]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCC4A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1159]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCCF0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1159]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCD96, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1161]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCE3C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1160]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCEE2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1160]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BCF88, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1160]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD02E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1162]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD0D4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1161]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD17A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1161]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD220, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1161]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD2C6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1163]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD36C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1162]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD412, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1162]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD4B8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1162]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD55E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1164]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD604, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1163]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD6AA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1163]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD750, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1163]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD7F6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1165]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD89C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1164]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD942, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1164]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BD9E8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1164]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDA8E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1166]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDB34, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1165]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDBDA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1165]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDC80, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1165]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDD26, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1167]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDDCC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1166]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDE72, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1166]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDF18, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1166]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BDFBE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1168]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE064, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1167]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE10A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1167]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE1B0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1167]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE256, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1169]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE2FC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1168]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE3A2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1168]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE448, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1168]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE4EE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1170]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE594, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1169]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE63A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1169]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE6E0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1169]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE786, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1171]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE82C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1170]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE8D2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1170]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BE978, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1170]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEA1E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1172]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEAC4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1171]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEB6A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1171]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEC10, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1171]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BECB6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1173]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BED5C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1172]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEE02, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1172]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEEA8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1172]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEF4E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1174]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BEFF4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1173]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF09A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1173]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF140, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1173]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF1E6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1175]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF28C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1174]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF332, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1174]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF3D8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1174]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF47E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1176]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF524, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1175]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF5CA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1175]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF670, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1175]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF716, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1177]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF7BC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1176]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF862, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1176]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF908, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1176]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BF9AE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1178]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFA54, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1177]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFAFA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1177]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFBA0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1177]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFC46, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1179]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFCEC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1178]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFD92, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1178]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFE38, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1178]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFEDE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1180]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000BFF84, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1179]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C002A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1179]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C00D0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1179]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0176, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1181]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C021C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1180]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C02C2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1180]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0368, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1180]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C040E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1182]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C04B4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1181]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C055A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1181]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0600, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1181]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C06A6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1183]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C074C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1182]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C07F2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1182]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0898, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1182]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C093E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1184]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C09E4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1183]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0A8A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1183]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0B30, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1183]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0BD6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1185]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0C7C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1184]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0D22, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1184]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0DC8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1184]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0E6E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1186]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0F14, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1185]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C0FBA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1185]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1060, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1185]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1106, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1187]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C11AC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1186]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1252, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1186]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C12F8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1186]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C139E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1188]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1444, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1187]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C14EA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1187]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1590, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1187]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1636, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1189]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C16DC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1188]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1782, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1188]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1828, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1188]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C18CE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1190]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1974, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1189]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1A1A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1189]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1AC0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1189]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1B66, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1191]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1C0C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1190]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1CB2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1190]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1D58, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1190]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1DFE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1192]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1EA4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1191]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1F4A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1191]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C1FF0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1191]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2096, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1193]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C213C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1192]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C21E2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1192]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2288, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1192]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C232E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1194]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C23D4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1193]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C247A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1193]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2520, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1193]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C25C6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1195]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C266C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1194]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2712, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1194]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C27B8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1194]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C285E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1196]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2904, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1195]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C29AA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1195]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2A50, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1195]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2AF6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1197]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2B9C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1196]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2C42, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1196]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2CE8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1196]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2D8E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1198]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2E34, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1197]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2EDA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1197]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C2F80, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1197]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3026, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1199]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C30CC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1198]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3172, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1198]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3218, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1198]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C32BE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1200]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3364, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1199]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C340A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1199]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C34B0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1199]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3556, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1201]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C35FC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1200]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C36A2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1200]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3748, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1200]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C37EE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1202]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3894, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1201]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C393A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1201]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C39E0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1201]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3A86, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1203]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3B2C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1202]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3BD2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1202]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3C78, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1202]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3D1E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1204]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3DC4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1203]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3E6A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1203]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3F10, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1203]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C3FB6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1205]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C405C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1204]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4102, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1204]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C41A8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1204]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C424E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1206]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C42F4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1205]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C439A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1205]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4440, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1205]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C44E6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1207]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C458C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1206]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4632, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1206]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C46D8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1206]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C477E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1208]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4824, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1207]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C48CA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1207]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4970, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1207]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4A16, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1209]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4ABC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1208]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4B62, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1208]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4C08, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1208]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4CAE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1210]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4D54, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1209]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4DFA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1209]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4EA0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1209]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4F46, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1211]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C4FEC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1210]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5092, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1210]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5138, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1210]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C51DE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1212]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5284, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1211]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C532A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1211]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C53D0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1211]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5476, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1213]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C551C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1212]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C55C2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1212]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5668, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1212]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C570E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1214]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C57B4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1213]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C585A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1213]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5900, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1213]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C59A6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1215]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5A4C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1214]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5AF2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1214]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5B98, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1214]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5C3E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1216]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5CE4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1215]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5D8A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1215]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5E30, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1215]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5ED6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1217]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C5F7C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1216]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6022, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1216]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C60C8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1216]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C616E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1218]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6214, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1217]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C62BA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1217]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6360, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1217]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6406, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1219]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C64AC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1218]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6552, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1218]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C65F8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1218]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C669E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1220]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6744, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1219]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C67EA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1219]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6890, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1219]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6936, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1221]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C69DC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1220]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6A82, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1220]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6B28, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1220]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6BCE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1222]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6C74, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1221]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6D1A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1221]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6DC0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1221]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6E66, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1223]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6F0C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1222]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C6FB2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1222]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7058, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1222]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C70FE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1224]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C71A4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1223]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C724A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1223]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C72F0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1223]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7396, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1225]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C743C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1224]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C74E2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1224]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7588, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1224]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C762E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1226]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C76D4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1225]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C777A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1225]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7820, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1225]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C78C6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1227]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C796C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1226]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7A12, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1226]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7AB8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1226]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7B5E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1228]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7C04, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1227]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7CAA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1227]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7D50, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1227]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7DF6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1229]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7E9C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1228]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7F42, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1228]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C7FE8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1228]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C808E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1230]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8134, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1229]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C81DA, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1229]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8280, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1229]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8326, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1231]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C83CC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1230]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8472, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1230]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8518, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1230]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C85BE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1232]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8664, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1231]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C870A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1231]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C87B0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1231]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8856, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1233]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C88FC, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1232]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C89A2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1232]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8A48, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1232]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8AEE, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1234]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8B94, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1233]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8C3A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1233]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8CE0, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1233]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8D86, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1235]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8E2C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1234]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8ED2, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1234]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C8F78, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1234]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C901E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1236]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C90C4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1235]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C916A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1235]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C9210, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1235]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C92B6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1237]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C935C, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1236]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C9402, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1236]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C94A8, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1236]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C954E, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1238]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C95F4, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=1], queueOffset=1237]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C969A, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=2], queueOffset=1237]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C9740, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=3], queueOffset=1237]
+[ INFO] SendResult [sendStatus=SEND_OK, msgId=743881C200002A9F00000000000C97E6, messageQueue=MessageQueue [topic=TopicTest1, brokerName=localhost.localdomain, queueId=0], queueOffset=1239]
+01:08:57.802 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+01:08:58.084 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  com.alibaba.jstorm.utils.LoadConf - Using defaults.yaml from resources
+01:08:58.152 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  b.s.u.StormBoundedExponentialBackoffRetry - The baseSleepTimeMs [1000] the maxSleepTimeMs [30000] the maxRetries [20]
+01:08:58.272 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  o.a.c.f.imps.CuratorFrameworkImpl - Starting
+01:08:58.288 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG o.a.curator.CuratorZookeeperClient - Starting
+01:08:58.289 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.ConnectionState - Starting
+01:08:58.289 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.ConnectionState - reset
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=localhost
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.8.0_91
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=/usr/java/jdk1.8.0_91/jre
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=/root/software/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=/tmp
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Linux
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=3.10.0-327.el7.x86_64
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=root
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=/root
+01:08:58.295 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=/root/gxc/jstorm-rocket-mq
+01:08:58.296 [com.alibaba.aloha.meta.example.TestTopology.main()] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=localhost:2181/jstorm/nimbus_master sessionTimeout=20000 watcher=org.apache.curator.ConnectionState@326fc30
+01:08:58.299 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.zookeeper.ClientCnxn - zookeeper.disableAutoWatchReset is false
+01:08:58.340 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:08:58.346 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:58.347 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:58.347 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:58.459 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:08:58.460 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:58.460 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:58.460 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:59.565 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:08:59.577 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:59.582 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:59.582 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:59.683 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:08:59.684 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:59.685 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:08:59.685 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:00.791 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:00.812 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:00.813 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:00.814 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:00.916 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:00.920 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:00.921 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:00.921 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:02.025 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:02.034 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:02.035 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:02.035 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:02.136 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:02.137 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:02.137 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:02.138 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:03.243 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:03.256 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:03.257 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:03.257 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:03.365 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:03.366 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:03.366 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:03.367 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:04.471 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:04.480 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:04.481 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:04.482 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:04.582 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:04.583 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:04.584 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:04.584 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:05.690 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:05.703 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:05.705 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:05.705 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:05.806 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:05.807 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:05.808 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:05.808 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:06.909 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:06.910 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:06.911 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:06.911 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:07.012 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:07.012 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:07.013 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:07.013 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:08.118 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:08.129 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:08.130 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:08.130 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:08.231 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:08.232 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:08.232 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:08.233 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:09.334 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:09.335 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:09.335 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:09.336 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:09.436 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:09.437 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:09.438 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:09.438 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:10.539 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:10.540 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:10.540 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:10.541 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:10.648 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:10.666 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:10.667 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:10.668 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:11.769 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:11.770 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:11.771 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:11.771 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:11.872 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:11.873 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:11.873 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:11.873 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:12.979 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:12.989 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:12.990 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:12.991 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:13.092 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:13.093 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:13.094 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:13.094 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:13.405 [com.alibaba.aloha.meta.example.TestTopology.main()] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (localhost:2181/jstorm/nimbus_master) and timeout (15000) / elapsed (15098)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198) [curator-client-2.5.0.jar:na]
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88) [curator-client-2.5.0.jar:na]
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115) [curator-client-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:488) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:172) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:161) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107) [curator-client-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:157) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:148) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:36) [curator-framework-2.5.0.jar:na]
+	at backtype.storm.security.auth.ThriftClient.getMasterByZk(ThriftClient.java:102) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.security.auth.ThriftClient.getMaster(ThriftClient.java:128) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.security.auth.ThriftClient.<init>(ThriftClient.java:87) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.<init>(NimbusClient.java:94) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.getConfiguredClientAs(NimbusClient.java:76) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.getConfiguredClient(NimbusClient.java:45) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.getConfiguredClient(NimbusClient.java:40) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:115) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:59) [jstorm-core-2.1.1.jar:na]
+	at com.alibaba.aloha.meta.example.TestTopology.submitTopology(TestTopology.java:126) [classes/:na]
+	at com.alibaba.aloha.meta.example.TestTopology.main(TestTopology.java:59) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:294) [exec-maven-plugin-1.5.0.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+01:09:13.406 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.RetryLoop - Retry-able exception received
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:198) ~[curator-client-2.5.0.jar:na]
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88) ~[curator-client-2.5.0.jar:na]
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115) ~[curator-client-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:488) ~[curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:172) ~[curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:161) ~[curator-framework-2.5.0.jar:na]
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107) ~[curator-client-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:157) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:148) [curator-framework-2.5.0.jar:na]
+	at org.apache.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:36) [curator-framework-2.5.0.jar:na]
+	at backtype.storm.security.auth.ThriftClient.getMasterByZk(ThriftClient.java:102) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.security.auth.ThriftClient.getMaster(ThriftClient.java:128) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.security.auth.ThriftClient.<init>(ThriftClient.java:87) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.<init>(NimbusClient.java:94) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.getConfiguredClientAs(NimbusClient.java:76) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.getConfiguredClient(NimbusClient.java:45) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.utils.NimbusClient.getConfiguredClient(NimbusClient.java:40) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:115) [jstorm-core-2.1.1.jar:na]
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:59) [jstorm-core-2.1.1.jar:na]
+	at com.alibaba.aloha.meta.example.TestTopology.submitTopology(TestTopology.java:126) [classes/:na]
+	at com.alibaba.aloha.meta.example.TestTopology.main(TestTopology.java:59) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:294) [exec-maven-plugin-1.5.0.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+01:09:14.199 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:14.214 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:14.216 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:14.216 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:14.317 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:14.318 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:14.319 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:14.319 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:14.408 [com.alibaba.aloha.meta.example.TestTopology.main()] DEBUG org.apache.curator.RetryLoop - Retrying operation
+01:09:15.423 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:15.431 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:15.432 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:15.433 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:15.533 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+01:09:15.534 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:15.535 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:780) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:399) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
+01:09:15.535 [com.alibaba.aloha.meta.example.TestTopology.main(localhost:2181)] DEBUG o.a.zookeeper.ClientCnxnSocketNIO - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException: null
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:797) ~[na:1.8.0_91]
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:407) ~[na:1.8.0_91]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207) ~[zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185) [zookeeper-3.4.6.jar:3.4.6-1569965]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110) [zookeeper-3.4.6.jar:3.4.6-1569965]
