@@ -55,8 +55,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
     protected transient DefaultMQPushConsumer consumer;
 
-    protected transient HashMap<Integer, Short> Taobaohashmap = new HashMap<>();
-    protected transient HashMap<Integer, Short> Tmallhashmap = new HashMap<>();
+    protected transient HashMap<Long, Short> Taobaohashmap = new HashMap<>();
+    protected transient HashMap<Long, Short> Tmallhashmap = new HashMap<>();
 
     long sendingCount;
     long startTime;
@@ -140,13 +140,19 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
             System.out.println("[*] Taking Element from queue failed.");
             e.printStackTrace();
         }
+        if (paymentMessage == null) {
+            return;
+        }
+        else{
         sendPaymentMessage(paymentMessage);
+        }
     }
 
     private void sendPaymentMessage(SimplePaymentMessage paymentMessage) {
         if (paymentMessage == null) {
             return;
         }
+        
         if (Taobaohashmap.get(paymentMessage.getOrderId()) == 1) {
             sendTaobaoMsg(paymentMessage);
         } else if (Tmallhashmap.get(paymentMessage.getOrderId()) == 1) {
@@ -280,8 +286,9 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                     OrderMessage taobaoMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
 
                     try {
-                        Taobaohashmap.put((int) (taobaoMessage.getCreateTime() / 6000) * 60, (short) 1);
+                        Taobaohashmap.put(taobaoMessage.getOrderId(), (short) 1);
                     } catch (Exception e) {
+                    
                         System.out.println("Write-in Hashmap failed.");
                         e.printStackTrace();
                     }
@@ -300,7 +307,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
                 try {
                     OrderMessage tmallMessage = RaceUtils.readKryoObject(OrderMessage.class, body);
                     try {
-                        Tmallhashmap.put((int) (tmallMessage.getCreateTime() / 6000) * 60, (short) 1);
+                        Tmallhashmap.put(tmallMessage.getOrderId(), (short) 1);
                     } catch (Exception e) {
                         System.out.println("Write-in Hashmap failed.");
                         e.printStackTrace();
