@@ -140,6 +140,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 //        }
 //        updateSendTps();
 
+        LOG.info("[*] step -4 ");
+
         SimplePaymentMessage paymentMessage = null;
 
         try {
@@ -148,11 +150,15 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
         } catch (Exception e) {
             System.out.println("Taking from queue Wrong!");
         }
+        LOG.info("[*] step -3 ");
         if (paymentMessage == null) {
+            LOG.info("[*] step -2.1 ");
             System.out.println("[*] PaymentMessage = null");
             return;
 
         } else {
+
+            LOG.info("[*] step -2.2 ");
 
             sendPaymentMessage(paymentMessage);
             System.out.println("[*] Simple Message Sending now:" + String.valueOf(paymentMessage.getOrderId()) + " , " + String.valueOf(paymentMessage.getMinutestamp()));
@@ -164,40 +170,18 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
             return;
         }
 
+        LOG.info("[*] step -1 ");
         sendPaymentMsg(paymentMessage);
 
-//<<<<<<< HEAD
-        Object T = null;
-        Object U = null;
-        try {
-            T = Taobaohashmap.get(paymentMessage.getOrderId());
-            U = Tmallhashmap.get(paymentMessage.getOrderId());
-        } catch (Exception e) {
-            System.out.println("[*] Again.");
-        }
-        if (T == null) {
-            if (U == null)
-                return;
-            else {
-                sendTmallMsg(paymentMessage);
-            }
-        } else {
-            if (U == null)
-                return;
-            else {
-                sendTaobaoMsg(paymentMessage);
-            }
-        }
-//=======
 
-//        Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
-//        if ( isTaobao != null && isTaobao == 1 ) {
-//            sendTaobaoMsg(paymentMessage);
-//        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) != null) {
-//            sendTmallMsg(paymentMessage);
-//        } else {
-//
-//        }
+        Short isTaobao = Taobaohashmap.get(paymentMessage.getOrderId());
+        if ( isTaobao != null && isTaobao == 1 ) {
+            sendTaobaoMsg(paymentMessage);
+        } else if (Tmallhashmap.get(paymentMessage.getOrderId()) != null) {
+            sendTmallMsg(paymentMessage);
+        } else {
+
+        }
 
     }
 
@@ -276,6 +260,8 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
 
     public void sendPaymentMsg(SimplePaymentMessage message) {
 
+        LOG.info("[*] step 0 ");
+        LOG.info(message.getMinutestamp() + "," + message.getPayAmount());
         collector.emit(RaceConfig.MqPayTopic, new Values(message.getMinutestamp(), message.getPayAmount()), message.getPayPlatform());
     }
 
