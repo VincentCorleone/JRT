@@ -7,6 +7,7 @@ import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Tuple;
 
+
 import com.alibaba.middleware.race.RaceConfig;
 import com.alibaba.middleware.race.Tair.TairOperatorImpl;
 import com.alibaba.middleware.race.model.PaymentAmountBin;
@@ -46,18 +47,22 @@ public class PaymentRatioBolt implements IRichBolt {
 
     @Override
     public void execute(Tuple tuple) {
+        LOG.info("[*] step 1 ");
+        LOG.info(tuple.getSourceStreamId());
 
         if (tuple.getSourceStreamId().equals(RaceConfig.MqPayTopic)) {
-
+            LOG.info("[*] step 2 ");
             int minutestamp = (int) tuple.getValueByField(RaceConfig.Minutestamp);
             double paymentAmount = (double) tuple.getValueByField(RaceConfig.PaymentAmount);
             short platform = (short) tuple.getValueByField(RaceConfig.PaymentAmount);
 
 
             if (minutestamp == 0) {
+                LOG.info("[*] step 3.1 ");
                 hashMapAllToTair();
                 LOG.info( " the end of payment msg");
             } else {
+                LOG.info("[*] step 3.2 ");
                 LOG.info( "minutestamp:" + minutestamp + ",paymentAmount:" + paymentAmount + ",platform:" + platform);
                 setRange(minutestamp);
                 String minutestampStr = String.valueOf(minutestamp);
@@ -141,7 +146,9 @@ public class PaymentRatioBolt implements IRichBolt {
 
                 double ratio = paymentAmountBinSum.pcAmount / paymentAmountBinSum.wirelessAmount;
                 String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
+                LOG.info( " [*] Begin to write into Tair :" + finalkey + "," + ratio);
                 TairOperatorImpl.write(finalkey, new Double(ratio));
+                LOG.info( " [*] End to write into Tair :" + finalkey + "," + ratio);
                 hashmap.remove(tmpkey);
             }
             minMinutestamp = maxMinutestamp - offset;
@@ -155,8 +162,9 @@ public class PaymentRatioBolt implements IRichBolt {
             PaymentAmountBin paymentAmountBin = hashmap.get(tmpkey);
             double ratio = paymentAmountBin.pcAmount / paymentAmountBin.wirelessAmount;
             String finalkey = RaceConfig.prex_ratio + RaceConfig.teamcode + "_" + tmpkey;
+            LOG.info( " [*] Begin to write into Tair :" + finalkey + "," + ratio);
             TairOperatorImpl.tairManager.put(RaceConfig.TairNamespace, finalkey, new Double(ratio));
-            System.out.println("[*] Write-into Tair.");
+            LOG.info( " [*] End to write into Tair :" + finalkey + "," + ratio);
 
         }
         hashmap.clear();
