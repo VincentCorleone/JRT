@@ -40,7 +40,7 @@ public class RaceSpout implements IRichSpout, MessageListenerConcurrently {
     private static Logger LOG = LoggerFactory.getLogger(RaceSpout.class);
 
 
-    protected SpoutOutputCollector collector;
+    protected transient SpoutOutputCollector collector;
 
 
     protected String id;

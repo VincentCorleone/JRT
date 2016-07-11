@@ -98,7 +98,7 @@ public class TmallBolt implements IRichBolt {
     					int intkey     = Key.intValue();
     					String partkey = String.valueOf(intkey);
     					String keY = RaceConfig.prex_tmall + RaceConfig.teamcode + "_" + partkey;
-    					tairOperator.write(keY, Value);
+    					TairOperatorImpl.tairManager.put(0,keY,Value);
     				}
     				
     			}

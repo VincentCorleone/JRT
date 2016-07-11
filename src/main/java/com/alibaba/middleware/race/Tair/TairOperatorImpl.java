@@ -16,10 +16,10 @@ import org.slf4j.LoggerFactory;
  * group 、namespace我们都会在正式提交代码前告知选手
  */
 
-public class TairOperatorImpl {
+public class TairOperatorImpl implements Serializable{
 
     private static Logger LOG = LoggerFactory.getLogger(TairOperatorImpl.class);
-    private DefaultTairManager tairManager = new DefaultTairManager();
+    public static DefaultTairManager tairManager = new DefaultTairManager();
 
     private static final int namespace = RaceConfig.TairNamespace;
 
@@ -30,9 +30,9 @@ public class TairOperatorImpl {
             confServer.add(RaceConfig.TairSlaveConfigServer);
         }
 
-        tairManager.setConfigServerList(confServer);
-        tairManager.setGroupName(RaceConfig.TairGroup);
-        tairManager.init();
+        TairOperatorImpl.tairManager.setConfigServerList(confServer);
+        TairOperatorImpl.tairManager.setGroupName(RaceConfig.TairGroup);
+        TairOperatorImpl.tairManager.init();
     }
     
     public boolean write(String key, Double value) {

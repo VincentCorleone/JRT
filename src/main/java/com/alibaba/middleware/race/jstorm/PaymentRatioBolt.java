@@ -31,7 +31,7 @@ public class PaymentRatioBolt implements IRichBolt {
     protected final int rangeSizeOnInputTair = 3600;
     protected final int offset = 600;
 
-    private TairOperatorImpl tairOperator = new TairOperatorImpl();
+    public TairOperatorImpl tairOperator = new TairOperatorImpl();
 
 
 
@@ -129,7 +129,7 @@ public class PaymentRatioBolt implements IRichBolt {
                 String tmpkey = String.valueOf(i);
                 PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
                 double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
-                tairOperator.write(tmpkey,ratio);
+                TairOperatorImpl.tairManager.put(0,tmpkey,new Double(ratio));
                 hashmap.remove(tmpkey);
             }
             minMinutestamp = maxMinutestamp - offset;
@@ -141,7 +141,7 @@ public class PaymentRatioBolt implements IRichBolt {
             String tmpkey = String.valueOf(i);
             PaymentAmountBin paymentAmountBin= hashmap.get(tmpkey);
             double ratio = paymentAmountBin.pcAmount/paymentAmountBin.wirelessAmount;
-            tairOperator.write(tmpkey,ratio);
+            TairOperatorImpl.tairManager.put(0,tmpkey,new Double(ratio));
             hashmap.remove(tmpkey);
         }
     }

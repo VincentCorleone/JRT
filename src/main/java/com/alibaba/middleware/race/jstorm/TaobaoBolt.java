@@ -97,7 +97,7 @@ public class TaobaoBolt implements IRichBolt {
     					int intkey     = Key.intValue();
     					String partkey = String.valueOf(intkey);
     					String keY = RaceConfig.prex_taobao + RaceConfig.teamcode + "_" + partkey;
-    					tairOperator.write(keY, Value);
+    					TairOperatorImpl.tairManager.put(0,keY, Value);
     				}
     				
     			}
